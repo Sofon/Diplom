@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\raw\\pass",
+        "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\raw\\pass"
+    },
+    {
+        "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\raw\\test",
+        "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\raw\\test"
+    },
+    {
+        "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\raw\\testvopr",
+        "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\raw\\testvopr"
+    }
+]

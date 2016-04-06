@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.krabd.klient"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="17" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.krabd.klient.MainActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="adjustPan" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.krabd.klient.MenuActivity"
+            android:label="@string/menu_title" >
+        </activity>
+        <activity
+            android:name="com.krabd.klient.LekciiActivity"
+            android:label="@string/lekcii_title" >
+        </activity>
+        <activity
+            android:name="com.krabd.klient.LecActivity"
+            android:label="@string/lekcii_title" >
+        </activity>
+        <activity
+            android:name="com.krabd.klient.StatistActivity"
+            android:label="@string/statist_title" >
+        </activity>
+        <activity
+            android:name="com.krabd.klient.RegActivity"
+            android:label="@string/reg_title"
+            android:windowSoftInputMode="adjustPan" >
+        </activity>
+        <activity
+            android:name="com.krabd.klient.TestsActivity"
+            android:label="@string/tests_title" >
+        </activity>
+        <activity
+            android:name="com.krabd.klient.TestActivity"
+            android:label="@string/test_title" >
+        </activity>
+        <activity
+            android:name="com.krabd.klient.SettingsActivity"
+            android:label="@string/settings_title" >
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    	android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="#151414"
+        android:columnCount="10"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/answer"
+            android:layout_width="240dp"
+            android:layout_height="35dp"
+            android:layout_column="1"
+            android:layout_columnSpan="9"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_row="19"
+            android:background="@drawable/roundrect"
+            android:onClick="onClick"
+            android:text="Ответить" />
+
+        <TextView
+            android:id="@+id/quest"
+            android:layout_width="wrap_content"
+            android:layout_height="86dp"
+            android:layout_column="1"
+            android:layout_columnSpan="9"
+            android:layout_gravity="fill_horizontal|top"
+            android:layout_row="2"
+            android:gravity="center"
+            android:text="Не забывайте, что вкладки можно прокручивать!\n Удачи :)"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <RadioGroup
+            android:id="@+id/radioGroup1"
+            android:layout_width="140dp"
+            android:layout_height="95dp"
+            android:layout_column="3"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_row="8"
+            android:background="@drawable/roundrect"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/radioButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RadioButton" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RadioButton" />
+        </RadioGroup>
+
+        <RadioGroup
+            android:id="@+id/radioGroup2"
+            android:layout_width="140dp"
+            android:layout_height="95dp"
+            android:layout_column="5"
+            android:layout_gravity="center"
+            android:layout_row="8"
+            android:background="@drawable/roundrect"
+            android:orientation="vertical" >
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="136dp"
+                android:layout_height="wrap_content"
+                android:text="RadioButton" />
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RadioButton" />
+        </RadioGroup>
+
+        <ImageView
+            android:id="@+id/img"
+            android:layout_width="252dp"
+            android:layout_height="151dp"
+            android:layout_column="1"
+            android:layout_columnSpan="9"
+            android:layout_gravity="center"
+            android:layout_row="6"
+            android:scaleType="fitXY"
+            android:src="@drawable/jhj" />
+
+        <EditText
+            android:id="@+id/answ"
+            android:layout_width="240dp"
+            android:layout_height="30dp"
+            android:layout_column="1"
+            android:layout_columnSpan="9"
+            android:layout_gravity="center"
+            android:layout_row="8"
+            android:gravity="center"
+            android:background="@drawable/roundrect"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="20dp"
+            android:layout_column="2"
+            android:layout_gravity="left|top"
+            android:layout_row="6"
+            android:text="" />
+
+        <Button
+            android:id="@+id/rez"
+            android:layout_width="240dp"
+            android:layout_height="35dp"
+            android:layout_column="1"
+            android:layout_columnSpan="9"
+            android:layout_gravity="center_horizontal|top"
+            android:layout_row="18"
+            android:background="@drawable/roundrect"
+            android:onClick="onClick1"
+            android:text="Отправить" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_column="3"
+            android:layout_gravity="left|top"
+            android:layout_row="7"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_column="3"
+            android:layout_gravity="left|top"
+            android:layout_row="5"
+            android:text="" />
+    </GridLayout>

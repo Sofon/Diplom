@@ -1,0 +1,93 @@
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+
+    android:columnCount="11"
+    android:orientation="horizontal" >
+    
+    <TextView
+        android:id="@+id/empty"
+        android:layout_width="60dp"
+        android:layout_height="10dp"
+        android:layout_column="1"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_row="5"
+        android:text=""
+        android:textColor="#003196"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:layout_column="3"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_row="16"
+        android:background="@drawable/roundrect"
+        android:onClick="onClick1"
+        android:text="Лекции"
+        android:textColor="#003196"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:layout_column="3"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_row="19"
+        android:background="@drawable/roundrect"
+        android:onClick="onClick2"
+        android:text="Тесты"
+        android:textColor="#003196"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:layout_column="3"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_row="22"
+        android:background="@drawable/roundrect"
+        android:onClick="onClick3"
+        android:text="Оценки"
+        android:textColor="#003196"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="3"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_row="4"
+        android:text="Вы вошли как:"
+        android:textColor="#003196"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/aboutm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="3"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_row="5"
+        android:text="Вы вошли как:"
+        android:gravity="center"
+        android:textColor="#003196"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_height="3dp"
+        android:layout_column="3"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_row="2"
+        android:text="TextView" />
+
+</GridLayout>
