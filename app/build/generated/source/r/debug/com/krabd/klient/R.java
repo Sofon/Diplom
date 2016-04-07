@@ -35,7 +35,7 @@ public final class R {
     }
     public static final class id {
         public static final int TextView02=0x7f0a0007;
-        public static final int about=0x7f0a001a;
+        public static final int about=0x7f0a001b;
         public static final int about_credits=0x7f0a0030;
         public static final int action_about=0x7f0a0034;
         public static final int action_ras=0x7f0a0032;
@@ -44,7 +44,7 @@ public final class R {
         public static final int answer=0x7f0a000a;
         public static final int button1=0x7f0a0003;
         public static final int button2=0x7f0a0004;
-        public static final int button3=0x7f0a001b;
+        public static final int button3=0x7f0a001c;
         public static final int checkBox1=0x7f0a002b;
         public static final int editText=0x7f0a0006;
         public static final int gr=0x7f0a001d;
@@ -71,7 +71,7 @@ public final class R {
         public static final int radioGroup2=0x7f0a000f;
         public static final int regg=0x7f0a002a;
         public static final int rez=0x7f0a0015;
-        public static final int scrollView=0x7f0a001c;
+        public static final int scrollView=0x7f0a001a;
         public static final int sur=0x7f0a001f;
         public static final int swipe_container=0x7f0a0017;
         public static final int textView1=0x7f0a0000;
