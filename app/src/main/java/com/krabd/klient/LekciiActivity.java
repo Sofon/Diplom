@@ -54,8 +54,8 @@ public class LekciiActivity extends ListActivity implements OnRefreshListener {
 		setContentView(R.layout.lects);
 		swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
 		swipeLayout.setOnRefreshListener(LekciiActivity.this);
-		swipeLayout.setColorScheme(Color.RED, Color.GREEN, Color.BLUE,
-				Color.CYAN);
+		//swipeLayout.setColorScheme(Color.RED, Color.GREEN, Color.BLUE,
+		//		Color.CYAN);
 		this.getListView();
 		fillData();
 	}

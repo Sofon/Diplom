@@ -21,6 +21,7 @@ import android.widget.TextView;
 public class MenuActivity extends Activity {
 
 	private TextView ns;
+
 	DataBase sqh = new DataBase(this);
 //	ImageView img;
 	String name;
@@ -34,8 +35,6 @@ public class MenuActivity extends Activity {
 		//ImageLoader imageLoader = ImageLoader.getInstance();
 		//imageLoader.init(ImageLoaderConfiguration
 		//		.createDefault(getBaseContext()));
-
-
 		//String sd = "" + getFilesDir() + "/mpeiClient/imge/imgava.jpeg";
 		//File sourceFile = new File(sd);
 		//if (sourceFile.isFile()) {
@@ -54,15 +53,15 @@ public class MenuActivity extends Activity {
 					.getColumnIndex(DataBase.studGROUP));
 		}
 		cursor.close();
-		ns = (TextView) findViewById(R.id.aboutm);
-		ns.setText(name + "\n" + surname);
+
+		ns = (TextView) findViewById(R.id.about);
+		ns.setText("Добро пожаловать "+name +" "+ surname);
 	}
 
 	public void onClick1(View v) {
 		Intent intent = new Intent(MenuActivity.this, LekciiActivity.class);
 		startActivity(intent);
 	}
-
 	public void onClick2(View v) {
 		Intent intent = new Intent(MenuActivity.this, TestsActivity.class);
 		startActivity(intent);

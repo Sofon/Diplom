@@ -45,11 +45,11 @@ public class TestsActivity extends ListActivity implements OnRefreshListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		this.getResources().getLayout(R.layout.tests);
 		setContentView(R.layout.tests);
 		swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
 		swipeLayout.setOnRefreshListener(TestsActivity.this);
-		swipeLayout.setColorScheme(Color.RED, Color.GREEN, Color.BLUE,
-				Color.CYAN);
+		//swipeLayout.setColorScheme(Color.RED, Color.GREEN, Color.BLUE, Color.CYAN);
 		this.getListView();
 		fillData();
 		registerForContextMenu(getListView());
