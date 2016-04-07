@@ -1,14 +1,17 @@
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-
     android:columnCount="11"
-    android:orientation="horizontal" >
+    android:orientation="horizontal"
+    tools:context=".MenuActivity">
+
 
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:baselineAligned="false">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,12 +29,10 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Лекции"
-                android:id="@+id/button1"
+                android:text="Оценки"
+                android:id="@+id/button3"
                 android:layout_weight="0.27"
-                android:clickable="true"
-                android:nestedScrollingEnabled="false"
-                android:onClick="onClick1" />
+                android:onClick="onClick3" />
 
             <Button
                 android:layout_width="match_parent"
@@ -44,11 +45,20 @@
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Оценки"
-                android:id="@+id/button3"
+                android:text="Лекции"
+                android:id="@+id/button1"
                 android:layout_weight="0.27"
-                android:onClick="onClick3" />
+                android:clickable="true"
+                android:nestedScrollingEnabled="false"
+                android:onClick="onClick1" />
 
         </LinearLayout>
+
     </LinearLayout>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView" />
+
 </GridLayout>

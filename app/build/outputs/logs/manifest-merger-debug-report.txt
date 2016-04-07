@@ -50,7 +50,7 @@ ADDED from C:\Users\Sofon\AndroidStudioProjects\Client6\app\src\main\AndroidMani
 	android:icon
 		ADDED from C:\Users\Sofon\AndroidStudioProjects\Client6\app\src\main\AndroidManifest.xml:18:9-45
 	android:theme
-		ADDED from C:\Users\Sofon\AndroidStudioProjects\Client6\app\src\main\AndroidManifest.xml:20:9-40
+		ADDED from C:\Users\Sofon\AndroidStudioProjects\Client6\app\src\main\AndroidManifest.xml:20:9-54
 activity#com.krabd.klient.MainActivity
 ADDED from C:\Users\Sofon\AndroidStudioProjects\Client6\app\src\main\AndroidManifest.xml:21:9-30:20
 	android:windowSoftInputMode
