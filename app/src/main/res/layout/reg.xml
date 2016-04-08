@@ -125,7 +125,7 @@
             <Button
                 android:layout_width="369dp"
                 android:layout_height="wrap_content"
-                android:text="Зарегестрироватся"
+                android:text="зарегистрироваться"
                 android:id="@+id/regg" />
 
         </LinearLayout>

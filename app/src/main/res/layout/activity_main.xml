@@ -82,7 +82,7 @@
             <Button
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
-                android:text="Регестрация"
+                android:text="Регистрация"
                 android:id="@+id/button2"
                 android:layout_gravity="center_horizontal" />
 
