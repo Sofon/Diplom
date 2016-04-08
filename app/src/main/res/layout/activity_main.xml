@@ -5,127 +5,88 @@
     android:columnCount="4"
     android:orientation="horizontal" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="2"
-        android:layout_gravity="center"
-        android:layout_row="5"
-        android:text="Логин"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/log"
-        android:layout_width="200dp"
-        android:layout_height="30dp"
-        android:layout_column="2"
-        android:layout_gravity="center"
-        android:layout_marginBottom="17dp"
-        android:layout_row="7"
-        android:background="@drawable/roundrect"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="vasya"
-        android:inputType="textEmailAddress"
-        android:text="krabd" />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:weightSum="1">
 
-    <EditText
-        android:id="@+id/pass"
-        android:layout_width="200dp"
-        android:layout_height="30dp"
-        android:layout_column="2"
-        android:layout_gravity="center"
-        android:layout_row="13"
-        android:background="@drawable/roundrect"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="Пароль"
-        android:inputType="textPassword"
-        android:text="1357908642" />
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressBar2"
+                android:indeterminate="false"
+                android:max="0"
+                android:progress="100" />
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="200dp"
-        android:layout_height="35dp"
-        android:layout_column="2"
-        android:layout_gravity="center"
-        android:layout_row="22"
-        android:background="@drawable/roundrect"
-        android:onClick="onClick"
-        android:text="Войти"
-        android:textColor="#003196"
-        android:textSize="24sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Логин:"
+                android:id="@+id/textView"
+                android:layout_gravity="center_horizontal" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="200dp"
-        android:layout_height="35dp"
-        android:layout_column="2"
-        android:layout_gravity="center"
-        android:layout_row="26"
-        android:background="@drawable/roundrect"
-        android:onClick="onClick1"
-        android:text="Регистрация"
-        android:textColor="#003196"
-        android:textSize="24sp" />
+            <EditText
+                android:layout_width="243dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/log"
+                android:layout_gravity="center_horizontal"
+                android:text="krabd" />
 
-    <EditText
-        android:id="@+id/group"
-        android:layout_width="200dp"
-        android:layout_height="30dp"
-        android:layout_column="2"
-        android:layout_gravity="center"
-        android:layout_row="17"
-        android:background="@drawable/roundrect"
-        android:ems="13"
-        android:gravity="center"
-        android:hint="А-ХХ-ХХ"
-        android:text="А-08-11" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Пароль:"
+                android:id="@+id/textView02"
+                android:layout_gravity="center_horizontal" />
 
-        <requestFocus />
-    </EditText>
+            <EditText
+                android:layout_width="243dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/pass"
+                android:layout_gravity="center_horizontal"
+                android:text="1357908642" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/editText"
-        android:layout_row="17"
-        android:layout_column="3" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Группа"
+                android:id="@+id/textView14"
+                android:layout_gravity="center_horizontal" />
 
-    <TextView
-        android:id="@+id/TextView02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="2"
-        android:layout_gravity="center_horizontal|top"
-        android:layout_row="8"
-        android:text="Пароль"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+            <EditText
+                android:layout_width="243dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/group"
+                android:layout_gravity="center_horizontal"
+                android:text="А-08-11" />
 
-    <ProgressBar
-        android:id="@+id/progressBar2"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="200dp"
-        android:layout_height="15dp"
-        android:layout_column="2"
-        android:layout_gravity="top"
-        android:max="100"
-        android:background="@drawable/roundrect"
-        android:layout_row="28" />
+            <Button
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:text="Войти"
+                android:id="@+id/button1"
+                android:layout_gravity="center_horizontal" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_height="10dp"
-        android:layout_column="2"
-        android:layout_gravity="center_horizontal|bottom"
-        android:layout_row="27"
-        android:text="" />
+            <Button
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:text="Регестрация"
+                android:id="@+id/button2"
+                android:layout_gravity="center_horizontal" />
+
+        </LinearLayout>
+    </LinearLayout>
 
 </GridLayout>

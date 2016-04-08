@@ -195,16 +195,16 @@
         android:layout_rowSpan="3"
         android:scaleType="fitXY"
         android:src="@drawable/jhj" />
-    
-    <ImageView
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:layout_column="2"
-            android:layout_gravity="center"
-            android:layout_row="12"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_mask" />
-    </FrameLayout>
+
+         <ImageView
+                 android:layout_width="130dp"
+                 android:layout_height="130dp"
+                 android:layout_column="2"
+                 android:layout_gravity="right|center_vertical"
+                 android:layout_row="12"
+                 android:scaleType="fitXY"
+                 android:src="@drawable/ic_mask" />
+     </FrameLayout>
 
     <Button
         android:id="@+id/loadimg"
