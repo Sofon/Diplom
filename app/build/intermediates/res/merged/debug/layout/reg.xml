@@ -6,283 +6,128 @@
     android:columnCount="10"
     android:orientation="horizontal" >
 
-    <EditText
-        android:id="@+id/gr"
-        android:layout_width="130dp"
-        android:layout_height="30dp"
-        android:layout_column="2"
-        android:layout_row="5"
-        android:background="@drawable/roundrect"
-        android:ems="10"
-        android:gravity="center"
-        android:text="А-08-11"
-        android:hint="А-09-11" >
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <requestFocus />
-    </EditText>
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="2"
-        android:layout_gravity="center"
-        android:layout_row="6"
-        android:text="Имя"
-        android:textColor="#FFFFFF"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+            <ProgressBar
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="369dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/progressBar"
+                android:max="0"
+                android:progress="100"
+                android:indeterminate="false" />
 
-    <EditText
-        android:id="@+id/nam"
-        android:layout_width="130dp"
-        android:layout_height="30dp"
-        android:layout_column="2"
-        android:layout_gravity="left|top"
-        android:layout_row="7"
-        android:background="@drawable/roundrect"
-        android:ems="10"
-        android:gravity="center"
-        android:text="Дмитрий"
-        android:hint="Имя" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Группа"
+                android:id="@+id/textView4"
+                android:layout_gravity="center_horizontal" />
 
-    <EditText
-        android:id="@+id/sur"
-        android:layout_width="130dp"
-        android:layout_height="30dp"
-        android:layout_column="2"
-        android:layout_gravity="left|top"
-        android:layout_row="9"
-        android:background="@drawable/roundrect"
-        android:ems="10"
-        android:gravity="center"
-        android:text="Андриевский"
-        android:hint="Фамилия" />
+            <EditText
+                android:layout_width="263dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/gr"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false" />
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="8"
-        android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginTop="22dp"
-        android:layout_row="4"
-        android:text="Лoгин"
-        android:textColor="#FFFFFF"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Имя"
+                android:id="@+id/textView5"
+                android:layout_gravity="center_horizontal" />
 
-    <EditText
-        android:id="@+id/logi"
-        android:layout_width="130dp"
-        android:layout_height="30dp"
-        android:layout_column="8"
-        android:layout_row="5"
-        android:background="@drawable/roundrect"
-        android:ems="10"
-        android:gravity="center"
-        android:text="krabd"
-        android:hint="Login"
-        android:inputType="textEmailAddress" />
+            <EditText
+                android:layout_width="263dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/nam"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="8"
-        android:layout_gravity="center_horizontal|top"
-        android:layout_row="6"
-        android:text="Пароль"
-        android:textColor="#FFFFFF"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Фамилия"
+                android:id="@+id/textView6"
+                android:layout_gravity="center_horizontal" />
 
-    <EditText
-        android:id="@+id/pas"
-        android:layout_width="130dp"
-        android:layout_height="30dp"
-        android:layout_column="8"
-        android:layout_row="7"
-        android:background="@drawable/roundrect"
-        android:ems="10"
-        android:gravity="center"
-        android:text="1357908642"
-        android:hint="Пароль"
-        android:inputType="textPassword" />
+            <EditText
+                android:layout_width="263dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/sur"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false" />
 
-    <EditText
-        android:id="@+id/pas1"
-        android:layout_width="130dp"
-        android:layout_height="30dp"
-        android:layout_column="8"
-        android:layout_row="9"
-        android:background="@drawable/roundrect"
-        android:ems="10"
-        android:gravity="center"
-        android:text="1357908642"
-        android:hint="Пароль"
-        android:inputType="textPassword" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Логин"
+                android:id="@+id/textView7"
+                android:layout_gravity="center_horizontal" />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="15dp"
-        android:layout_height="70dp"
-        android:layout_column="1"
-        android:layout_gravity="left|top"
-        android:layout_row="4" />
+            <EditText
+                android:layout_width="263dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/logi"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false" />
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="2"
-        android:layout_gravity="center_horizontal|bottom"
-        android:layout_row="4"
-        android:text="Группа"
-        android:textColor="#FFFFFF"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Пароль"
+                android:id="@+id/textView8"
+                android:layout_gravity="center_horizontal" />
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="30dp"
-        android:layout_column="5"
-        android:layout_gravity="left|center_vertical"
-        android:layout_row="4" />
+            <EditText
+                android:layout_width="263dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/pas"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        android:layout_column="8"
-        android:layout_gravity="center_horizontal|bottom"
-        android:layout_row="8"
-        android:text=" Повторите\n    пароль"
-        android:textColor="#FFFFFF"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Повторите пароль"
+                android:id="@+id/textView9"
+                android:layout_gravity="center_horizontal" />
 
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_column="2"
-        android:layout_gravity="center"
-        android:layout_row="8"
-        android:text="Фамилия"
-        android:textColor="#FFFFFF"
-        android:textSize="22sp"
-        android:textStyle="bold" />
+            <EditText
+                android:layout_width="263dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/pas1"
+                android:layout_gravity="center_horizontal"
+                android:autoText="false" />
 
-     <FrameLayout
-        android:id="@+id/imgContainer1"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:layout_column="2"
-        android:layout_gravity="center|top"
-        android:layout_row="12"
-        android:layout_rowSpan="3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true">
-    
-    <ImageView
-        android:id="@+id/img"
-        android:layout_width="130dp"
-        android:layout_height="130dp"
-        android:layout_column="2"
-        android:layout_gravity="center|top"
-        android:layout_row="12"
-        android:layout_rowSpan="3"
-        android:scaleType="fitXY"
-        android:src="@drawable/jhj" />
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Я согласен на обработку персональных данных"
+                android:id="@+id/checkBox"
+                android:checked="false" />
 
-         <ImageView
-                 android:layout_width="130dp"
-                 android:layout_height="130dp"
-                 android:layout_column="2"
-                 android:layout_gravity="right|center_vertical"
-                 android:layout_row="12"
-                 android:scaleType="fitXY"
-                 android:src="@drawable/ic_mask" />
-     </FrameLayout>
+            <Button
+                android:layout_width="369dp"
+                android:layout_height="wrap_content"
+                android:text="Зарегестрироватся"
+                android:id="@+id/regg" />
 
-    <Button
-        android:id="@+id/loadimg"
-        android:layout_width="130dp"
-        android:layout_height="66dp"
-        android:layout_column="8"
-        android:layout_gravity="top"
-        android:layout_row="12"
-        android:layout_rowSpan="3"
-        android:background="@drawable/roundrect"
-        android:onClick="onClick1"
-        android:text="Выбрать фото"
-        android:textColor="#003196"
-        android:textSize="24sp" />
-
-    <ProgressBar
-        android:id="@+id/progressBar1"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_column="5"
-        android:layout_gravity="center_horizontal|top"
-        android:layout_row="10" />
-
-    <Button
-        android:id="@+id/regg"
-        android:layout_width="130dp"
-        android:layout_height="35dp"
-        android:layout_column="8"
-        android:layout_gravity="bottom"
-        android:layout_row="14"
-        android:background="@drawable/roundrect"
-        android:onClick="onClick"
-        android:text="Регистрация"
-        android:textColor="#003196"
-        android:textSize="21sp" />
-
-    <CheckBox
-        android:id="@+id/checkBox1"
-        android:layout_width="32dp"
-        android:layout_column="2"
-        android:layout_columnSpan="7"
-        android:layout_gravity="top"
-        android:layout_row="16"
-        android:background="@drawable/roundrect"
-        android:text=""
-        android:textColor="#003196"
-        android:textSize="15sp" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_column="2"
-        android:layout_gravity="center_horizontal|top"
-        android:layout_row="10"
-        android:text="" />
-
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="287dp"
-        android:layout_column="2"
-        android:layout_columnSpan="7"
-        android:layout_gravity="top"
-        android:layout_row="16"
-        android:text="          Я согласен на обработку моих \n          персоональных данных"
-        android:textColor="#FFFFFF"
-        android:textSize="15sp" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_column="8"
-        android:layout_gravity="left|top"
-        android:layout_row="13"
-        android:text="" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_column="2"
-        android:layout_gravity="left|top"
-        android:layout_row="15"
-        android:text="" />
-
+        </LinearLayout>
+    </LinearLayout>
 </GridLayout>

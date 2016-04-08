@@ -71,7 +71,7 @@
                 android:id="@+id/group"
                 android:layout_gravity="center_horizontal"
                 android:text="А-08-11" />
-            
+
             <Button
                 android:layout_width="240dp"
                 android:layout_height="wrap_content"
