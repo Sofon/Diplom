@@ -10,83 +10,92 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:orientation="vertical"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:weightSum="1">
+            android:layout_height="560dp"
+            android:id="@+id/scrollView3" >
 
-            <ProgressBar
-                style="?android:attr/progressBarStyleHorizontal"
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/progressBar2"
-                android:indeterminate="false"
-                android:max="0"
-                android:progress="100" />
+                android:layout_height="568dp"
+                android:layout_row="1"
+                android:layout_column="0">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Логин:"
-                android:id="@+id/textView"
-                android:layout_gravity="center_horizontal" />
+                <ProgressBar
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/progressBar2"
+                    android:indeterminate="false"
+                    android:max="0"
+                    android:progress="100" />
 
-            <EditText
-                android:layout_width="243dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/log"
-                android:layout_gravity="center_horizontal"
-                android:text="krabd" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Логин:"
+                    android:id="@+id/textView"
+                    android:layout_gravity="center_horizontal" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Пароль:"
-                android:id="@+id/textView02"
-                android:layout_gravity="center_horizontal" />
+                <EditText
+                    android:layout_width="243dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/log"
+                    android:layout_gravity="center_horizontal"
+                    android:text="krabd" />
 
-            <EditText
-                android:layout_width="243dp"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:ems="10"
-                android:id="@+id/pass"
-                android:layout_gravity="center_horizontal"
-                android:text="1357908642" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Пароль:"
+                    android:id="@+id/textView02"
+                    android:layout_gravity="center_horizontal" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Группа"
-                android:id="@+id/textView14"
-                android:layout_gravity="center_horizontal" />
+                <EditText
+                    android:layout_width="243dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:ems="10"
+                    android:id="@+id/pass"
+                    android:layout_gravity="center_horizontal"
+                    android:text="1357908642" />
 
-            <EditText
-                android:layout_width="243dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/group"
-                android:layout_gravity="center_horizontal"
-                android:text="А-08-11" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:text="Группа"
+                    android:id="@+id/textView14"
+                    android:layout_gravity="center_horizontal" />
 
-            <Button
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
-                android:text="Войти"
-                android:id="@+id/button1"
-                android:layout_gravity="center_horizontal" />
+                <EditText
+                    android:layout_width="243dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/group"
+                    android:layout_gravity="center_horizontal"
+                    android:text="А-08-11" />
 
-            <Button
-                android:layout_width="240dp"
-                android:layout_height="wrap_content"
-                android:text="Регестрация"
-                android:id="@+id/button2"
-                android:layout_gravity="center_horizontal" />
+                <Button
+                    android:layout_width="240dp"
+                    android:layout_height="63dp"
+                    android:text="Войти"
+                    android:id="@+id/button1"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="onClick" />
 
-        </LinearLayout>
+                <Button
+                    android:layout_width="240dp"
+                    android:layout_height="61dp"
+                    android:text="Регистрация"
+                    android:id="@+id/button2"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="onClick1" />
+            </LinearLayout>
+        </ScrollView>
+
     </LinearLayout>
 
 </GridLayout>

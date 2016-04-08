@@ -5,17 +5,22 @@
     android:columnCount="3"
     android:orientation="horizontal" >
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="240dp"
-        android:layout_height="35dp"
-        android:layout_column="2"
-        android:layout_gravity="center"
-        android:layout_row="10"
-        android:background="@drawable/roundrect"
-        android:onClick="onClick"
-        android:text="Очистка"
-        android:textColor="#003196"
-        android:textSize="24sp" />
-    
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Очистить"
+                android:id="@+id/button" />
+
+        </LinearLayout>
+    </LinearLayout>
 </GridLayout>
