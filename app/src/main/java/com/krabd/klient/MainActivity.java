@@ -107,10 +107,10 @@ public class MainActivity extends Activity {
 				|| Variable.group.equals("")) {
 			AlertDialog.Builder builder = new AlertDialog.Builder(
 					MainActivity.this);
-			builder.setTitle("������")
-					.setMessage("���������� ��������� ��� ����")
+			builder.setTitle("Ошибка")
+					.setMessage("Необходимо заполнить все поля")
 					.setCancelable(false)
-					.setNegativeButton("���������� ����������",
+					.setNegativeButton("Продолжить заполнение",
 							new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog,
 										int id) {
@@ -131,10 +131,10 @@ public class MainActivity extends Activity {
 			else {
 				AlertDialog.Builder builder = new AlertDialog.Builder(
 						MainActivity.this);
-				builder.setTitle("������")
-						.setMessage("��� ����������� � ���������")
+				builder.setTitle("Ошибка")
+						.setMessage("Нет подключения к интернету")
 						.setCancelable(false)
-						.setNegativeButton("����������� �����",
+						.setNegativeButton("Попробовать позже",
 								new DialogInterface.OnClickListener() {
 									public void onClick(DialogInterface dialog,
 											int id) {
@@ -158,9 +158,9 @@ public class MainActivity extends Activity {
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 		final AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-		alertDialog.setTitle("�������� ����������");
-		alertDialog.setMessage("�� ������������� ������ ������� ����������?");
-		alertDialog.setButton("��", new DialogInterface.OnClickListener() {
+		alertDialog.setTitle("Закрытие приложения");
+		alertDialog.setMessage("Вы действительно хотите закрыть приложение?");
+		alertDialog.setButton("Да", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
 				Intent intent = new Intent(Intent.ACTION_MAIN);
 				intent.addCategory(Intent.CATEGORY_HOME);
@@ -168,7 +168,7 @@ public class MainActivity extends Activity {
 				startActivity(intent);
 			}
 		});
-		alertDialog.setButton2("���", new DialogInterface.OnClickListener() {
+		alertDialog.setButton2("Нет", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 			}
@@ -198,22 +198,22 @@ public class MainActivity extends Activity {
 			ae = Variable.stringresponse_stud;
 			qw = ae.substring(1, 2);
 			switch (qw) {
-			case "O":
-				AlertDialog.Builder builder = new AlertDialog.Builder(
-						MainActivity.this);
-				builder.setTitle("������")
-						.setMessage("������������ �� ������")
-						.setCancelable(false)
-						.setNegativeButton("������ ������",
-								new DialogInterface.OnClickListener() {
-									public void onClick(DialogInterface dialog,
-											int id) {
-										dialog.cancel();
-									}
-								});
-				AlertDialog alert = builder.create();
-				alert.show();
-				break;
+				case "O":
+					AlertDialog.Builder builder = new AlertDialog.Builder(
+							MainActivity.this);
+					builder.setTitle("Ошибка")
+							.setMessage("Пользователь не найден")
+							.setCancelable(false)
+							.setNegativeButton("Ввести заново",
+									new DialogInterface.OnClickListener() {
+										public void onClick(DialogInterface dialog,
+															int id) {
+											dialog.cancel();
+										}
+									});
+					AlertDialog alert = builder.create();
+					alert.show();
+					break;
 			case "\"":
 				flagauth = true;
 				try {
@@ -309,11 +309,11 @@ public class MainActivity extends Activity {
 				final int length = cursor.getCount();
 				final String[] lecnm = new String[length];
 				per = (int) Math.floor(40 / length);
-				String title = "��������������";
-				String message = "������ ���������� �������� ���������� ������. �������� ����� ������� ����� ���������."
-						+ " �� ��������?";
-				String button1String = "��";
-				String button2String = "���";
+				String title = "Предупреждение";
+				String message = "Сейчас произойдет проверка обновлений лекций. Возможно будут скачаны новые материалы."
+						+ " Вы согласны?";
+				String button1String = "Да";
+				String button2String = "Нет";
 				ad = new AlertDialog.Builder(context);
 				ad.setTitle(title);
 				ad.setMessage(message);
