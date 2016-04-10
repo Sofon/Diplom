@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\values\\values.xml",
+        "outputFile": "C:\\Users\\Sofon\\Diplom\\app\\build\\intermediates\\res\\merged\\debug\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,13 +11,13 @@
                     "endOffset": 90
                 },
                 "from": {
-                    "file": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\values\\colors.xml",
+                    "file": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\values\\colors.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 136,
+                        "startOffset": 140,
                         "endColumn": 39,
-                        "endOffset": 171
+                        "endOffset": 175
                     }
                 }
             },
@@ -30,13 +30,13 @@
                     "endOffset": 131
                 },
                 "from": {
-                    "file": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\values\\colors.xml",
+                    "file": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\values\\colors.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
-                        "startOffset": 55,
+                        "startOffset": 57,
                         "endColumn": 40,
-                        "endOffset": 91
+                        "endOffset": 93
                     }
                 }
             },
@@ -49,13 +49,13 @@
                     "endOffset": 171
                 },
                 "from": {
-                    "file": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\values\\colors.xml",
+                    "file": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\values\\colors.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 96,
+                        "startOffset": 99,
                         "endColumn": 39,
-                        "endOffset": 131
+                        "endOffset": 134
                     }
                 }
             },
@@ -68,13 +68,13 @@
                     "endOffset": 229
                 },
                 "from": {
-                    "file": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\values\\dimens.xml",
+                    "file": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\values\\dimens.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 89,
+                        "startOffset": 92,
                         "endColumn": 57,
-                        "endOffset": 142
+                        "endOffset": 145
                     }
                 }
             },
@@ -87,13 +87,13 @@
                     "endOffset": 285
                 },
                 "from": {
-                    "file": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\values\\dimens.xml",
+                    "file": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\values\\dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 147,
+                        "startOffset": 151,
                         "endColumn": 55,
-                        "endOffset": 198
+                        "endOffset": 202
                     }
                 }
             },
@@ -106,13 +106,13 @@
                     "endOffset": 338
                 },
                 "from": {
-                    "file": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
-                        "startOffset": 200,
+                        "startOffset": 206,
                         "endColumn": 52,
-                        "endOffset": 248
+                        "endOffset": 254
                     }
                 }
             },
@@ -125,13 +125,13 @@
                     "endOffset": 382
                 },
                 "from": {
-                    "file": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 102,
+                        "startOffset": 106,
                         "endColumn": 43,
-                        "endOffset": 141
+                        "endOffset": 145
                     }
                 }
             },
@@ -144,13 +144,13 @@
                     "endOffset": 436
                 },
                 "from": {
-                    "file": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 146,
+                        "startOffset": 151,
                         "endColumn": 53,
-                        "endOffset": 195
+                        "endOffset": 200
                     }
                 }
             },
@@ -163,13 +163,13 @@
                     "endOffset": 504
                 },
                 "from": {
-                    "file": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 5,
-                        "startOffset": 746,
+                        "startOffset": 765,
                         "endColumn": 68,
-                        "endOffset": 809
+                        "endOffset": 828
                     }
                 }
             },
@@ -182,13 +182,13 @@
                     "endOffset": 565
                 },
                 "from": {
-                    "file": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 5,
-                        "startOffset": 684,
+                        "startOffset": 702,
                         "endColumn": 61,
-                        "endOffset": 740
+                        "endOffset": 758
                     }
                 }
             },
@@ -201,13 +201,13 @@
                     "endOffset": 611
                 },
                 "from": {
-                    "file": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 56,
+                        "startOffset": 59,
                         "endColumn": 45,
-                        "endOffset": 97
+                        "endOffset": 100
                     }
                 }
             },
@@ -220,13 +220,13 @@
                     "endOffset": 664
                 },
                 "from": {
-                    "file": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
-                        "startOffset": 258,
+                        "startOffset": 266,
                         "endColumn": 52,
-                        "endOffset": 306
+                        "endOffset": 314
                     }
                 }
             },
@@ -239,13 +239,13 @@
                     "endOffset": 718
                 },
                 "from": {
-                    "file": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 5,
-                        "startOffset": 370,
+                        "startOffset": 381,
                         "endColumn": 54,
-                        "endOffset": 419
+                        "endOffset": 430
                     }
                 }
             },
@@ -258,13 +258,13 @@
                     "endOffset": 770
                 },
                 "from": {
-                    "file": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 5,
-                        "startOffset": 317,
+                        "startOffset": 327,
                         "endColumn": 52,
-                        "endOffset": 364
+                        "endOffset": 374
                     }
                 }
             },
@@ -277,13 +277,13 @@
                     "endOffset": 820
                 },
                 "from": {
-                    "file": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 5,
-                        "startOffset": 470,
+                        "startOffset": 483,
                         "endColumn": 50,
-                        "endOffset": 515
+                        "endOffset": 528
                     }
                 }
             },
@@ -296,13 +296,13 @@
                     "endOffset": 873
                 },
                 "from": {
-                    "file": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 5,
-                        "startOffset": 624,
+                        "startOffset": 640,
                         "endColumn": 53,
-                        "endOffset": 672
+                        "endOffset": 688
                     }
                 }
             },
@@ -315,13 +315,13 @@
                     "endOffset": 922
                 },
                 "from": {
-                    "file": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 5,
-                        "startOffset": 574,
+                        "startOffset": 589,
                         "endColumn": 49,
-                        "endOffset": 618
+                        "endOffset": 633
                     }
                 }
             },
@@ -334,13 +334,13 @@
                     "endOffset": 966
                 },
                 "from": {
-                    "file": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 5,
-                        "startOffset": 425,
+                        "startOffset": 437,
                         "endColumn": 44,
-                        "endOffset": 464
+                        "endOffset": 476
                     }
                 }
             },
@@ -353,13 +353,13 @@
                     "endOffset": 1018
                 },
                 "from": {
-                    "file": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\values\\strings.xml",
+                    "file": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\values\\strings.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 5,
-                        "startOffset": 521,
+                        "startOffset": 535,
                         "endColumn": 52,
-                        "endOffset": 568
+                        "endOffset": 582
                     }
                 }
             },
@@ -373,14 +373,14 @@
                     "endOffset": 1309
                 },
                 "from": {
-                    "file": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\values\\styles.xml",
+                    "file": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
-                        "startOffset": 186,
+                        "startOffset": 192,
                         "endLine": 12,
                         "endColumn": 12,
-                        "endOffset": 472
+                        "endOffset": 484
                     }
                 }
             },
@@ -394,14 +394,14 @@
                     "endOffset": 1469
                 },
                 "from": {
-                    "file": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\values\\styles.xml",
+                    "file": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\values\\styles.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 510,
+                        "startOffset": 525,
                         "endLine": 17,
                         "endColumn": 12,
-                        "endOffset": 665
+                        "endOffset": 682
                     }
                 }
             }
