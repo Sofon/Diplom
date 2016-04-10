@@ -198,22 +198,22 @@ public class MainActivity extends Activity {
 			ae = Variable.stringresponse_stud;
 			qw = ae.substring(1, 2);
 			switch (qw) {
-			case "O":
-				AlertDialog.Builder builder = new AlertDialog.Builder(
-						MainActivity.this);
-				builder.setTitle("������")
-						.setMessage("������������ �� ������")
-						.setCancelable(false)
-						.setNegativeButton("������ ������",
-								new DialogInterface.OnClickListener() {
-									public void onClick(DialogInterface dialog,
-											int id) {
-										dialog.cancel();
-									}
-								});
-				AlertDialog alert = builder.create();
-				alert.show();
-				break;
+				case "O":
+					AlertDialog.Builder builder = new AlertDialog.Builder(
+							MainActivity.this);
+					builder.setTitle("Ошибка")
+							.setMessage("Пользователь не найден")
+							.setCancelable(false)
+							.setNegativeButton("Ввести заново",
+									new DialogInterface.OnClickListener() {
+										public void onClick(DialogInterface dialog,
+															int id) {
+											dialog.cancel();
+										}
+									});
+					AlertDialog alert = builder.create();
+					alert.show();
+					break;
 			case "\"":
 				flagauth = true;
 				try {
@@ -309,11 +309,11 @@ public class MainActivity extends Activity {
 				final int length = cursor.getCount();
 				final String[] lecnm = new String[length];
 				per = (int) Math.floor(40 / length);
-				String title = "��������������";
-				String message = "������ ���������� �������� ���������� ������. �������� ����� ������� ����� ���������."
-						+ " �� ��������?";
-				String button1String = "��";
-				String button2String = "���";
+				String title = "Предупреждение";
+				String message = "Сейчас произойдет проверка обновлений лекций. Возможно будут скачаны новые материалы."
+						+ " Вы согласны?";
+				String button1String = "Да";
+				String button2String = "Нет";
 				ad = new AlertDialog.Builder(context);
 				ad.setTitle(title);
 				ad.setMessage(message);

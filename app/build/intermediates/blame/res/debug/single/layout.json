@@ -32,12 +32,12 @@
         "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\layout\\rez.xml"
     },
     {
-        "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\layout\\android_fragment.xml",
-        "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\layout\\android_fragment.xml"
-    },
-    {
         "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tests.xml",
         "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\layout\\tests.xml"
+    },
+    {
+        "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\layout\\android_fragment.xml",
+        "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\layout\\android_fragment.xml"
     },
     {
         "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\layout\\settings.xml",
