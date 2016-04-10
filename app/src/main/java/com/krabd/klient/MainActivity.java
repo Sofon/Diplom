@@ -107,10 +107,10 @@ public class MainActivity extends Activity {
 				|| Variable.group.equals("")) {
 			AlertDialog.Builder builder = new AlertDialog.Builder(
 					MainActivity.this);
-			builder.setTitle("������")
-					.setMessage("���������� ��������� ��� ����")
+			builder.setTitle("Ошибка")
+					.setMessage("Необходимо заполнить все поля")
 					.setCancelable(false)
-					.setNegativeButton("���������� ����������",
+					.setNegativeButton("Продолжить заполнение",
 							new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog,
 										int id) {
@@ -131,10 +131,10 @@ public class MainActivity extends Activity {
 			else {
 				AlertDialog.Builder builder = new AlertDialog.Builder(
 						MainActivity.this);
-				builder.setTitle("������")
-						.setMessage("��� ����������� � ���������")
+				builder.setTitle("Ошибка")
+						.setMessage("Нет подключения к интернету")
 						.setCancelable(false)
-						.setNegativeButton("����������� �����",
+						.setNegativeButton("Попробовать позже",
 								new DialogInterface.OnClickListener() {
 									public void onClick(DialogInterface dialog,
 											int id) {
@@ -158,9 +158,9 @@ public class MainActivity extends Activity {
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 		final AlertDialog alertDialog = new AlertDialog.Builder(this).create();
-		alertDialog.setTitle("�������� ����������");
-		alertDialog.setMessage("�� ������������� ������ ������� ����������?");
-		alertDialog.setButton("��", new DialogInterface.OnClickListener() {
+		alertDialog.setTitle("Закрытие приложения");
+		alertDialog.setMessage("Вы действительно хотите закрыть приложение?");
+		alertDialog.setButton("Да", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
 				Intent intent = new Intent(Intent.ACTION_MAIN);
 				intent.addCategory(Intent.CATEGORY_HOME);
@@ -168,7 +168,7 @@ public class MainActivity extends Activity {
 				startActivity(intent);
 			}
 		});
-		alertDialog.setButton2("���", new DialogInterface.OnClickListener() {
+		alertDialog.setButton2("Нет", new DialogInterface.OnClickListener() {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 			}

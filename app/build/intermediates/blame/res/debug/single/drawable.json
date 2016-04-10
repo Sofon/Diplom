@@ -4,12 +4,12 @@
         "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\drawable\\ic_mask.png"
     },
     {
-        "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\settings.png",
-        "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\drawable\\settings.png"
-    },
-    {
         "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\mpeilogo.png",
         "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\drawable\\mpeilogo.png"
+    },
+    {
+        "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\settings.png",
+        "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\drawable\\settings.png"
     },
     {
         "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\roundrect.xml",

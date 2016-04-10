@@ -2,39 +2,53 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\libs\httpclient-4.1.jar"
-        jumboMode="false"
+        jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
         revision="23.0.3"
-        sha1="93cd011acb220de08b57d96106e5800d7097742b">
-        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\debug\httpclient-4.1_40d80730eec9ac7b5bca7ea545c9d965dfb3aaae.jar" />
+        sha1="982f6eaf78fdc7697d6e7cb1c954082583e7a3ca">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_7241e86dcda88c68114274806904ffde48482f73\classes.dex" />
     </item>
     <item
         jar="D:\android-sdk-windows\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
-        jumboMode="false"
+        jumboMode="true"
         revision="23.0.3"
         sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
-        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0_2f5c0c58b3728cfa4705f2645f4988eb4a0239ac.jar" />
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-v4-19.1.0_2f5c0c58b3728cfa4705f2645f4988eb4a0239ac\classes.dex" />
     </item>
     <item
         jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\libs\httpmime-4.1-beta1.jar"
-        jumboMode="false"
+        jumboMode="true"
         revision="23.0.3"
         sha1="c6a4817fb147dd523dd0239b6fcfc9fe4ba2dcfc">
-        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\debug\httpmime-4.1-beta1_e01860dc075a1a99d8de12904fd15b705d697d35.jar" />
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\transforms\dex\debug\folders\1000\2\httpmime-4.1-beta1_e01860dc075a1a99d8de12904fd15b705d697d35\classes.dex" />
     </item>
     <item
         jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\libs\universal-image-loader-1.9.3.jar"
-        jumboMode="false"
+        jumboMode="true"
         revision="23.0.3"
         sha1="a85588bec3e2c4584d593d3f15df1677321bca72">
-        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.3_97ee6b7eb453f6e79be20c29fc4c11c1f92825ab.jar" />
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\transforms\dex\debug\folders\1000\2\universal-image-loader-1.9.3_97ee6b7eb453f6e79be20c29fc4c11c1f92825ab\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\libs\httpclient-4.1.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="93cd011acb220de08b57d96106e5800d7097742b">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\transforms\dex\debug\folders\1000\2\httpclient-4.1_40d80730eec9ac7b5bca7ea545c9d965dfb3aaae\classes.dex" />
     </item>
     <item
         jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\libs\httpcore-4.1.jar"
-        jumboMode="false"
+        jumboMode="true"
         revision="23.0.3"
         sha1="33fc26c02f8043ab0ede19eadc8c9885386b255c">
-        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\debug\httpcore-4.1_78ec9b21e7c7c48601841d814bae83162a4f85f4.jar" />
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\transforms\dex\debug\folders\1000\2\httpcore-4.1_78ec9b21e7c7c48601841d814bae83162a4f85f4\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="9d01dc069f35043f4a87d781e6caf11a284b152e">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_b4d07b1fe556264d1a359e1f7bdbd85ecbe32ad6\classes.dex" />
     </item>
 
 </items>
