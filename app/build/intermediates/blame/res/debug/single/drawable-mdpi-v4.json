@@ -8,12 +8,12 @@
         "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\drawable-mdpi\\jhj.png"
     },
     {
-        "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
-        "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
-    },
-    {
         "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\dddd.png",
         "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\drawable-mdpi\\dddd.png"
+    },
+    {
+        "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_launcher.png",
+        "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\drawable-mdpi\\ic_launcher.png"
     },
     {
         "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\qwe.png",
