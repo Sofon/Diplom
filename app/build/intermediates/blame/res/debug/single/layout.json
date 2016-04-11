@@ -1,50 +1,50 @@
 [
     {
-        "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item.xml",
-        "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\layout\\list_item.xml"
+        "merged": "C:\\Users\\Sofon\\Diplom\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tests.xml",
+        "source": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\layout\\tests.xml"
     },
     {
-        "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
-        "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\layout\\activity_main.xml"
+        "merged": "C:\\Users\\Sofon\\Diplom\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
+        "source": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_st.xml",
-        "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\layout\\list_st.xml"
+        "merged": "C:\\Users\\Sofon\\Diplom\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_item.xml",
+        "source": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\layout\\list_item.xml"
     },
     {
-        "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\layout\\reg.xml",
-        "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\layout\\reg.xml"
+        "merged": "C:\\Users\\Sofon\\Diplom\\app\\build\\intermediates\\res\\merged\\debug\\layout\\lects.xml",
+        "source": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\layout\\lects.xml"
     },
     {
-        "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\layout\\statist.xml",
-        "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\layout\\statist.xml"
+        "merged": "C:\\Users\\Sofon\\Diplom\\app\\build\\intermediates\\res\\merged\\debug\\layout\\android_fragment.xml",
+        "source": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\layout\\android_fragment.xml"
     },
     {
-        "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\layout\\menu.xml",
-        "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\layout\\menu.xml"
+        "merged": "C:\\Users\\Sofon\\Diplom\\app\\build\\intermediates\\res\\merged\\debug\\layout\\menu.xml",
+        "source": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\layout\\menu.xml"
     },
     {
-        "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\layout\\test.xml",
-        "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\layout\\test.xml"
+        "merged": "C:\\Users\\Sofon\\Diplom\\app\\build\\intermediates\\res\\merged\\debug\\layout\\rez.xml",
+        "source": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\layout\\rez.xml"
     },
     {
-        "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\layout\\rez.xml",
-        "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\layout\\rez.xml"
+        "merged": "C:\\Users\\Sofon\\Diplom\\app\\build\\intermediates\\res\\merged\\debug\\layout\\settings.xml",
+        "source": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\layout\\settings.xml"
     },
     {
-        "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\layout\\tests.xml",
-        "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\layout\\tests.xml"
+        "merged": "C:\\Users\\Sofon\\Diplom\\app\\build\\intermediates\\res\\merged\\debug\\layout\\statist.xml",
+        "source": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\layout\\statist.xml"
     },
     {
-        "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\layout\\android_fragment.xml",
-        "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\layout\\android_fragment.xml"
+        "merged": "C:\\Users\\Sofon\\Diplom\\app\\build\\intermediates\\res\\merged\\debug\\layout\\reg.xml",
+        "source": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\layout\\reg.xml"
     },
     {
-        "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\layout\\settings.xml",
-        "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\layout\\settings.xml"
+        "merged": "C:\\Users\\Sofon\\Diplom\\app\\build\\intermediates\\res\\merged\\debug\\layout\\test.xml",
+        "source": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\layout\\test.xml"
     },
     {
-        "merged": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\build\\intermediates\\res\\merged\\debug\\layout\\lects.xml",
-        "source": "C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\res\\layout\\lects.xml"
+        "merged": "C:\\Users\\Sofon\\Diplom\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_st.xml",
+        "source": "C:\\Users\\Sofon\\Diplom\\app\\src\\main\\res\\layout\\list_st.xml"
     }
 ]

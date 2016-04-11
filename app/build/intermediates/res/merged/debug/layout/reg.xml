@@ -44,8 +44,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/gr"
                     android:layout_gravity="center_horizontal"
-                    android:autoText="false"
-                    android:text="А-07-12" />
+                    android:text="А-07-12"
+                    android:singleLine="true" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -61,7 +61,8 @@
                     android:id="@+id/nam"
                     android:layout_gravity="center_horizontal"
                     android:autoText="false"
-                    android:text="Вася" />
+                    android:text="Вася"
+                    android:singleLine="true" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -77,7 +78,8 @@
                     android:id="@+id/sur"
                     android:layout_gravity="center_horizontal"
                     android:autoText="false"
-                    android:text="Раков" />
+                    android:text="Раков"
+                    android:singleLine="true" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -92,7 +94,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/logi"
                     android:layout_gravity="center_horizontal"
-                    android:autoText="false" />
+                    android:autoText="false"
+                    android:singleLine="true" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -108,7 +111,8 @@
                     android:id="@+id/pas"
                     android:layout_gravity="center_horizontal"
                     android:autoText="false"
-                    android:password="true" />
+                    android:password="true"
+                    android:singleLine="true" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -124,7 +128,8 @@
                     android:id="@+id/pas1"
                     android:layout_gravity="center_horizontal"
                     android:autoText="false"
-                    android:password="true" />
+                    android:password="true"
+                    android:singleLine="true" />
 
                 <CheckBox
                     android:layout_width="match_parent"

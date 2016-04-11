@@ -48,14 +48,14 @@
             android:background="@drawable/roundrect"
             android:orientation="vertical" >
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/radioButton1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#003196"
                 android:text="RadioButton" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/radioButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -73,14 +73,14 @@
             android:background="@drawable/roundrect"
             android:orientation="vertical" >
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/radioButton3"
                 android:layout_width="136dp"
                 android:layout_height="wrap_content"
                 android:textColor="#003196"
                 android:text="RadioButton" />
 
-            <RadioButton
+            <CheckBox
                 android:id="@+id/radioButton4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
