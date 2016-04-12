@@ -53,10 +53,10 @@ public class RegActivity extends Activity implements OnClickListener {
 	RgTask Rg_T;
 	String fileName;
 	Bitmap galleryPic = null;
-//	ImageView image;
+	ImageView image;
 	int serverResponseCode = 0;
 	String uploadFilePath = "0";
-//	private static final int PICK_IMAGE = 1;
+	private static final int PICK_IMAGE = 1;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -72,7 +72,7 @@ public class RegActivity extends Activity implements OnClickListener {
 		btn = (Button) findViewById(R.id.regg);
 		pb = (ProgressBar) findViewById(R.id.progressBar);
 		chb = (CheckBox) findViewById(R.id.checkBox);
-		//image = (ImageView) findViewById(R.id.img);
+		image = (ImageView) findViewById(R.id.img);
 		pb.setVisibility(View.GONE);
 		btn.setOnClickListener(this);
 	}
@@ -236,62 +236,62 @@ public class RegActivity extends Activity implements OnClickListener {
 		}
 	}
 
-//	public void onClick1(View v) {
-//		selectImageFromGallery();
-//	}
+	public void onClick1(View v) {
+		selectImageFromGallery();
+	}
 
-//	public void selectImageFromGallery() {
-//		Intent intent = new Intent();
-//		intent.setType("image/*");
-//		intent.setAction(Intent.ACTION_GET_CONTENT);
-//		startActivityForResult(Intent.createChooser(intent, "Select Picture"),
-//				PICK_IMAGE);
-//	}
+	public void selectImageFromGallery() {
+		Intent intent = new Intent();
+		intent.setType("image/*");
+		intent.setAction(Intent.ACTION_GET_CONTENT);
+		startActivityForResult(Intent.createChooser(intent, "Select Picture"),
+				PICK_IMAGE);
+	}
 
-//	@Override
-//	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//		// TODO Auto-generated method stub
-//		switch (requestCode) {
-//			case PICK_IMAGE:
-//				if (resultCode == RESULT_OK) {
-//					Uri selectedImage = data.getData();
-//					try {
-//						galleryPic = Media.getBitmap(getContentResolver(),
-//								selectedImage);
-//					}
-//					catch (FileNotFoundException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-//					catch (IOException e) {
-//						// TODO Auto-generated catch block
-//						e.printStackTrace();
-//					}
-//					image.setImageBitmap(galleryPic);
-//					String FilePath = getRealPathFromURI(selectedImage);
-//					uploadFilePath = FilePath;
-//				}
-//				break;
-//		}
-//	}
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		switch (requestCode) {
+			case PICK_IMAGE:
+				if (resultCode == RESULT_OK) {
+					Uri selectedImage = data.getData();
+					try {
+						galleryPic = Media.getBitmap(getContentResolver(),
+								selectedImage);
+					}
+					catch (FileNotFoundException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					image.setImageBitmap(galleryPic);
+					String FilePath = getRealPathFromURI(selectedImage);
+					uploadFilePath = FilePath;
+				}
+				break;
+		}
+	}
 
-//	private String getRealPathFromURI(Uri contentURI) {
-//		String result;
-//		Cursor cursor = getContentResolver().query(contentURI, null, null,
-//				null, null);
-//		if (cursor == null) { // Source is Dropbox or other similar local file
-//			// path
-//			result = contentURI.getPath();
-//		}
-//		else {
-//			cursor.moveToFirst();
-//			int idx = cursor
-//					.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
-//			result = cursor.getString(idx);
-//			cursor.close();
-//		}
-//		return result;
-//	}
+	private String getRealPathFromURI(Uri contentURI) {
+		String result;
+		Cursor cursor = getContentResolver().query(contentURI, null, null,
+				null, null);
+		if (cursor == null) { // Source is Dropbox or other similar local file
+			// path
+			result = contentURI.getPath();
+		}
+		else {
+			cursor.moveToFirst();
+			int idx = cursor
+					.getColumnIndex(MediaStore.Images.ImageColumns.DATA);
+			result = cursor.getString(idx);
+			cursor.close();
+		}
+		return result;
+	}
 
 	private class RgTask extends AsyncTask<String, Integer, String> {
 
@@ -304,8 +304,7 @@ public class RegActivity extends Activity implements OnClickListener {
 			nameValuePairs.add(new BasicNameValuePair("gr", params[2]));
 			nameValuePairs.add(new BasicNameValuePair("lg", params[3]));
 			nameValuePairs.add(new BasicNameValuePair("pss", params[4]));
-			Variable.stringresponse_reg = POSTRequest.POST_Data(nameValuePairs,
-					Variable.URL_reg);
+			Variable.stringresponse_reg = POSTRequest.POST_Data(nameValuePairs, Variable.URL_reg);
 			return Variable.stringresponse_reg;
 		}
 

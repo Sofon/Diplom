@@ -1,9 +1,16 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'Sofon'
+            keyPassword 'Sofon96321478'
+            storeFile file('C:/Users/Sofon/Desktop/Sofon1.jks')
+            storePassword 'Sofon96321478'
+        }
+    }
     compileSdkVersion 22
     buildToolsVersion "23.0.3"
-
     defaultConfig {
         applicationId "com.krabd.klient"
         minSdkVersion 14
@@ -13,11 +20,14 @@ android {
             targetCompatibility JavaVersion.VERSION_1_7
         }
     }
-
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            signingConfig signingConfigs.config
+            zipAlignEnabled true
+        }
+        debug {
         }
     }
 }

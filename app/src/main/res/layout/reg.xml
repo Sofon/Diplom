@@ -44,7 +44,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/gr"
                     android:layout_gravity="center_horizontal"
-                    android:text="А-07-12"
+                    android:text="А-08-12"
                     android:singleLine="true" />
 
                 <TextView
@@ -95,7 +95,8 @@
                     android:id="@+id/logi"
                     android:layout_gravity="center_horizontal"
                     android:autoText="false"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:text="sofon1" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -112,7 +113,8 @@
                     android:layout_gravity="center_horizontal"
                     android:autoText="false"
                     android:password="true"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:text="963214" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -129,20 +131,22 @@
                     android:layout_gravity="center_horizontal"
                     android:autoText="false"
                     android:password="true"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:text="963214" />
 
                 <CheckBox
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Я согласен на обработку персональных данных"
                     android:id="@+id/checkBox"
-                    android:checked="false" />
+                    android:checked="true" />
 
                 <Button
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="зарегистрироваться"
-                    android:id="@+id/regg" />
+                    android:id="@+id/regg"
+                    android:onClick="onClick" />
 
             </LinearLayout>
         </LinearLayout>
