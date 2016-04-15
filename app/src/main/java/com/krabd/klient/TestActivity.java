@@ -152,12 +152,9 @@ public class TestActivity extends TabActivity {
 					rad.clearCheck();
 					rad2.clearCheck();
 					if (clo[tabnum] == 1) {
-						btn.setBackgroundColor(Color.GRAY);
 						btn.setEnabled(false);
 					} else {
 						btn.setEnabled(true);
-						btn.setBackgroundDrawable(getResources().getDrawable(
-								R.drawable.roundrect));
 					}
 					swtype(typeint, tabnum, vopr, var1, var2, var3, var4,
 							imageLoader);
@@ -168,7 +165,7 @@ public class TestActivity extends TabActivity {
 		btn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				btn.setEnabled(false);
-				btn.setBackgroundColor(Color.GRAY);
+
 				clo[tabnum] = 1;
 				switch (typeint) {
 					case 1:

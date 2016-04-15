@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
     	android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -18,14 +19,12 @@
             android:layout_columnSpan="10"
             android:layout_gravity="center_horizontal|top"
             android:layout_row="20"
-            android:background="@drawable/roundrect"
             android:onClick="onClick"
-            android:textColor="#003196"
             android:text="Ответить" />
 
         <TextView
             android:id="@+id/quest"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="90dp"
             android:layout_column="1"
             android:layout_columnSpan="10"
@@ -44,22 +43,20 @@
             android:layout_column="4"
             android:layout_gravity="center_horizontal|top"
             android:layout_row="8"
-            android:textColor="#003196"
-            android:background="@drawable/roundrect"
+
             android:orientation="vertical" >
 
-            <CheckBox
+            <RadioButton
                 android:id="@+id/radioButton1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#003196"
+
                 android:text="RadioButton" />
 
-            <CheckBox
+            <RadioButton
                 android:id="@+id/radioButton2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#003196"
                 android:text="RadioButton" />
         </RadioGroup>
 
@@ -70,21 +67,18 @@
             android:layout_column="6"
             android:layout_gravity="center"
             android:layout_row="8"
-            android:background="@drawable/roundrect"
             android:orientation="vertical" >
 
-            <CheckBox
+            <RadioButton
                 android:id="@+id/radioButton3"
                 android:layout_width="136dp"
                 android:layout_height="wrap_content"
-                android:textColor="#003196"
                 android:text="RadioButton" />
 
-            <CheckBox
+            <RadioButton
                 android:id="@+id/radioButton4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="#003196"
                 android:text="RadioButton" />
         </RadioGroup>
 
@@ -108,7 +102,6 @@
             android:layout_gravity="center"
             android:layout_row="8"
             android:gravity="center"
-            android:background="@drawable/roundrect"
             android:ems="10" >
 
             <requestFocus />
@@ -130,9 +123,7 @@
             android:layout_columnSpan="10"
             android:layout_gravity="center_horizontal|top"
             android:layout_row="17"
-            android:background="@drawable/roundrect"
             android:onClick="onClick1"
-            android:textColor="#003196"
             android:text="Отправить" />
 
         <TextView
@@ -148,14 +139,13 @@
             android:layout_gravity="left|top"
             android:layout_row="5"
             android:text="" />
-        
+
         <TabHost
         android:id="@android:id/tabhost"
         android:layout_width="match_parent"
         android:layout_column="1"
         android:layout_columnSpan="10"
         android:layout_row="22"
-        android:background="@drawable/roundrect"
         android:layout_height="match_parent" >
 
 			<LinearLayout
@@ -171,7 +161,6 @@
 		            android:id="@android:id/tabs"
 		            android:layout_width="match_parent"
 		            android:layout_height="wrap_content"
-		            android:background="@drawable/roundrect"
 		            >
 		        </TabWidget>
 		    </HorizontalScrollView>
