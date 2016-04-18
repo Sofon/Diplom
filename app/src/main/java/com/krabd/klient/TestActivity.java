@@ -122,7 +122,7 @@ public class TestActivity extends TabActivity {
 		}
 		curstext.close();
 		int j = i;
-		TabHost tabHost = getTabHost();
+		final TabHost tabHost = getTabHost();
 		TabHost.TabSpec tabSpec;
 		for (i = 1; i <= j + 1; i++) {
 			tabSpec = tabHost.newTabSpec("" + i);
@@ -165,7 +165,7 @@ public class TestActivity extends TabActivity {
 		btn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
 				btn.setEnabled(false);
-
+				tabHost.setCurrentTab(tabHost.getCurrentTab()+1);
 				clo[tabnum] = 1;
 				switch (typeint) {
 					case 1:
@@ -180,6 +180,9 @@ public class TestActivity extends TabActivity {
 					case 4:
 						answ[tabnum] = an.getText().toString();
 						break;
+
+
+
 				}
 			}
 		});

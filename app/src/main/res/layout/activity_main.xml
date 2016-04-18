@@ -44,7 +44,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/log"
                     android:layout_gravity="center_horizontal"
-                    android:text="krabd" />
+                    android:text="krabd"
+                    android:singleLine="true" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -61,7 +62,8 @@
                     android:ems="10"
                     android:id="@+id/pass"
                     android:layout_gravity="center_horizontal"
-                    android:text="1357908642" />
+                    android:text="1357908642"
+                    android:singleLine="true" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -76,7 +78,8 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/group"
                     android:layout_gravity="center_horizontal"
-                    android:text="А-08-11" />
+                    android:text="А-08-11"
+                    android:singleLine="true" />
 
                 <Button
                     android:layout_width="240dp"
