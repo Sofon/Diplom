@@ -21,6 +21,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -62,6 +63,13 @@ public class TestActivity extends TabActivity {
 	static int tabnum;
 	String aw;
 	int length;
+
+	public void hideSoftKeyboard() {
+		if(getCurrentFocus()!=null) {
+			InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+			inputMethodManager.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+		}
+	}
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -164,25 +172,51 @@ public class TestActivity extends TabActivity {
 
 		btn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-				btn.setEnabled(false);
-				tabHost.setCurrentTab(tabHost.getCurrentTab()+1);
-				clo[tabnum] = 1;
-				switch (typeint) {
-					case 1:
-						answ[tabnum] = aw;
-						break;
-					case 2:
-						answ[tabnum] = an.getText().toString();
-						break;
-					case 3:
-						answ[tabnum] = aw;
-						break;
-					case 4:
-						answ[tabnum] = an.getText().toString();
-						break;
+				if ((!(an.length()==0)  || aw == "1" || aw == "2" || aw == "3" || aw == "4")) {
 
 
+					if (clo[tabHost.getCurrentTab() + 1] == 1) {
+						btn.setEnabled(false);
+					} else {
+						btn.setEnabled(true);
+					}
+					hideSoftKeyboard();
+					clo[tabnum] = 1;
+					int y = tabHost.getCurrentTab();
+					tabHost.setCurrentTab(y+1);
+					switch (typeint) {
+						case 1:
+							answ[tabnum] = aw;
+							break;
+						case 2:
+							answ[tabnum] = an.getText().toString();
+							break;
+						case 3:
+							answ[tabnum] = aw;
+							break;
+						case 4:
+							answ[tabnum] = an.getText().toString();
+							break;
 
+
+					}
+				}
+				else
+				{   clo[tabnum] = 0;
+					AlertDialog.Builder builder7 = new AlertDialog.Builder(
+							TestActivity.this);
+					builder7.setTitle("Ошибка")
+							.setMessage("Вы нечего не ответили!")
+							.setCancelable(false)
+							.setNegativeButton("ОК",
+									new DialogInterface.OnClickListener() {
+										public void onClick(DialogInterface dialog,
+															int id) {
+											dialog.cancel();
+										}
+									});
+					AlertDialog alert7 = builder7.create();
+					alert7.show();
 				}
 			}
 		});
