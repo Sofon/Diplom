@@ -99,10 +99,29 @@ public class RegActivity extends Activity implements OnClickListener {
 							});
 			AlertDialog alert = builder.create();
 			alert.show();
+
 		}
-		else {
+		else
+		{
 			if (pss.getText().toString().equals(pss1.getText().toString())) {
 				if (chb.isChecked()) {
+					if((pss.getText().length()==0) && (lgn.getText().length()==0))
+					{
+						AlertDialog.Builder builder = new AlertDialog.Builder(
+								RegActivity.this);
+						builder.setTitle("Ошибка")
+								.setMessage("Необходимо заполнить все поля")
+								.setCancelable(false)
+								.setNegativeButton("Продолжить заполнение",
+										new DialogInterface.OnClickListener() {
+											public void onClick(DialogInterface dialog,
+																int id) {
+												dialog.cancel();
+											}
+										});
+						AlertDialog alert = builder.create();
+						alert.show();
+					}
 					boolean checkCon;
 					checkCon = checkInternetConnection();
 					if (checkCon) {
@@ -332,6 +351,38 @@ public class RegActivity extends Activity implements OnClickListener {
 					grp.setText("");
 					pss.setText("");
 					pss1.setText("");
+					break;
+				case"PassLose":
+					AlertDialog.Builder builder4 = new AlertDialog.Builder(
+							RegActivity.this);
+					builder4.setTitle("Ошибка")
+							.setMessage("Пароль слишком простой")
+							.setCancelable(false)
+							.setNegativeButton("ОК",
+									new DialogInterface.OnClickListener() {
+										public void onClick(DialogInterface dialog,
+															int id) {
+											dialog.cancel();
+										}
+									});
+					AlertDialog alert4 = builder4.create();
+					alert4.show();
+					break;
+				case"LogLose":
+					AlertDialog.Builder builder5 = new AlertDialog.Builder(
+							RegActivity.this);
+					builder5.setTitle("Ошибка")
+							.setMessage("Логин слишком короткий или содержит не латинские символы")
+							.setCancelable(false)
+							.setNegativeButton("ОК",
+									new DialogInterface.OnClickListener() {
+										public void onClick(DialogInterface dialog,
+															int id) {
+											dialog.cancel();
+										}
+									});
+					AlertDialog alert5 = builder5.create();
+					alert5.show();
 					break;
 				case "OK":
 					AlertDialog.Builder builder1 = new AlertDialog.Builder(

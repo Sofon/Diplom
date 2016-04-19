@@ -44,7 +44,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/gr"
                     android:layout_gravity="center_horizontal"
-                    android:text="А-08-12"
+                    android:text="А-08-11"
                     android:singleLine="true" />
 
                 <TextView
@@ -61,7 +61,6 @@
                     android:id="@+id/nam"
                     android:layout_gravity="center_horizontal"
                     android:autoText="false"
-                    android:text="Вася"
                     android:singleLine="true" />
 
                 <TextView
@@ -78,7 +77,6 @@
                     android:id="@+id/sur"
                     android:layout_gravity="center_horizontal"
                     android:autoText="false"
-                    android:text="Раков"
                     android:singleLine="true" />
 
                 <TextView
@@ -95,8 +93,7 @@
                     android:id="@+id/logi"
                     android:layout_gravity="center_horizontal"
                     android:autoText="false"
-                    android:singleLine="true"
-                    android:text="sofon1" />
+                    android:singleLine="true" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -113,8 +110,7 @@
                     android:layout_gravity="center_horizontal"
                     android:autoText="false"
                     android:password="true"
-                    android:singleLine="true"
-                    android:text="963214" />
+                    android:singleLine="true" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -131,8 +127,7 @@
                     android:layout_gravity="center_horizontal"
                     android:autoText="false"
                     android:password="true"
-                    android:singleLine="true"
-                    android:text="963214" />
+                    android:singleLine="true" />
 
                 <CheckBox
                     android:layout_width="match_parent"
