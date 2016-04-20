@@ -79,6 +79,8 @@ public class RegActivity extends Activity implements OnClickListener {
 
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
+		btn.setEnabled(false);
+		pb.setProgress(20);
 		if (pss.getText().toString().equals("")
 				|| pss1.getText().toString().equals("")
 				|| lgn.getText().toString().equals("")
@@ -123,6 +125,7 @@ public class RegActivity extends Activity implements OnClickListener {
 						alert.show();
 					}
 					boolean checkCon;
+					pb.setProgress(40);
 					checkCon = checkInternetConnection();
 					if (checkCon) {
 						if (uploadFilePath.equals("0")) {
@@ -164,6 +167,7 @@ public class RegActivity extends Activity implements OnClickListener {
 												AlertDialog alert = builder
 														.create();
 												alert.show();
+												btn.setEnabled(true);
 											}
 										});
 									}
@@ -176,8 +180,10 @@ public class RegActivity extends Activity implements OnClickListener {
 											runOnUiThread(new Runnable() {
 												public void run() {
 													dialog.dismiss();
+													pb.setProgress(80);
 													pb.setVisibility(View.VISIBLE);
 													Rg_T = new RgTask();
+													pb.setProgress(100);
 													Rg_T.execute(
 															nm.getText()
 																	.toString(),
@@ -190,8 +196,9 @@ public class RegActivity extends Activity implements OnClickListener {
 															pss.getText()
 																	.toString(),
 															Variable.stringresponse_reg);
-												}
-											});
+													btn.setEnabled(true);
+										}
+									});
 										}
 									}
 								}
@@ -214,6 +221,7 @@ public class RegActivity extends Activity implements OnClickListener {
 										});
 						AlertDialog alert = builder.create();
 						alert.show();
+						btn.setEnabled(true);
 					}
 				}
 				else {
@@ -232,6 +240,7 @@ public class RegActivity extends Activity implements OnClickListener {
 									});
 					AlertDialog alert = builder.create();
 					alert.show();
+					btn.setEnabled(true);
 				}
 			}
 			else {
@@ -249,6 +258,7 @@ public class RegActivity extends Activity implements OnClickListener {
 								});
 				AlertDialog alert = builder.create();
 				alert.show();
+				btn.setEnabled(true);
 				pss.setText("");
 				pss1.setText("");
 			}
@@ -356,7 +366,10 @@ public class RegActivity extends Activity implements OnClickListener {
 					AlertDialog.Builder builder4 = new AlertDialog.Builder(
 							RegActivity.this);
 					builder4.setTitle("Ошибка")
-							.setMessage("Пароль слишком простой")
+							.setMessage("Пароль должен содержать :" +
+									"Минимум 6 символов " +
+									"Маленькие и большие буквы латинского алфавита" +
+									"А также цифры")
 							.setCancelable(false)
 							.setNegativeButton("ОК",
 									new DialogInterface.OnClickListener() {
@@ -367,6 +380,7 @@ public class RegActivity extends Activity implements OnClickListener {
 									});
 					AlertDialog alert4 = builder4.create();
 					alert4.show();
+					btn.setEnabled(true);
 					break;
 				case"LogLose":
 					AlertDialog.Builder builder5 = new AlertDialog.Builder(
@@ -383,6 +397,7 @@ public class RegActivity extends Activity implements OnClickListener {
 									});
 					AlertDialog alert5 = builder5.create();
 					alert5.show();
+					btn.setEnabled(true);
 					break;
 				case "OK":
 					AlertDialog.Builder builder1 = new AlertDialog.Builder(
@@ -403,6 +418,8 @@ public class RegActivity extends Activity implements OnClickListener {
 									});
 					AlertDialog alert1 = builder1.create();
 					alert1.show();
+					btn.setEnabled(true);
+
 					break;
 				case "USER_EXIST":
 					AlertDialog.Builder builder3 = new AlertDialog.Builder(
@@ -419,6 +436,8 @@ public class RegActivity extends Activity implements OnClickListener {
 									});
 					AlertDialog alert3 = builder3.create();
 					alert3.show();
+					btn.setEnabled(true);
+
 					break;
 				default:
 					AlertDialog.Builder builder2 = new AlertDialog.Builder(
@@ -435,6 +454,7 @@ public class RegActivity extends Activity implements OnClickListener {
 									});
 					AlertDialog alert2 = builder2.create();
 					alert2.show();
+					btn.setEnabled(true);
 					break;
 			}
 		}

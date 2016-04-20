@@ -22,6 +22,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -38,6 +39,7 @@ public class MainActivity extends Activity {
 	LectDownloadTask downloadTask;
 	LastLectDownloadTask downloadTask1;
 	ImgDownloadTask imagedownloadTask;
+	Button but;
 	int progress;
 	boolean flav;
 	boolean flagauth;
@@ -58,6 +60,7 @@ public class MainActivity extends Activity {
 		logi = (EditText) findViewById(R.id.log);
 		pas = (EditText) findViewById(R.id.pass);
 		gro = (EditText) findViewById(R.id.group);
+		but = (Button)  findViewById(R.id.button1);
 		pb = (ProgressBar) findViewById(R.id.progressBar2);
 		pb.setVisibility(View.GONE);
 		try {
@@ -97,6 +100,8 @@ public class MainActivity extends Activity {
 
 	public void onClick(View v) throws IOException {
 		myProgress = 0;
+		pb.setMax(100);
+		but.setEnabled(false);
 		pb.setVisibility(View.VISIBLE);
 		myProgress++;
 		pb.setProgress(myProgress);
@@ -105,6 +110,7 @@ public class MainActivity extends Activity {
 		Variable.pssw = pas.getText().toString();
 		if (Variable.lgnm.equals("") || Variable.pssw.equals("")
 				|| Variable.group.equals("")) {
+			but.setEnabled(true);
 			AlertDialog.Builder builder = new AlertDialog.Builder(
 					MainActivity.this);
 			builder.setTitle("Ошибка")
@@ -113,7 +119,7 @@ public class MainActivity extends Activity {
 					.setNegativeButton("Продолжить заполнение",
 							new DialogInterface.OnClickListener() {
 								public void onClick(DialogInterface dialog,
-										int id) {
+													int id) {
 									dialog.cancel();
 								}
 							});
@@ -129,6 +135,7 @@ public class MainActivity extends Activity {
 						Variable.stringresponse_stud);
 			}
 			else {
+				but.setEnabled(true);
 				AlertDialog.Builder builder = new AlertDialog.Builder(
 						MainActivity.this);
 				builder.setTitle("Ошибка")
@@ -137,7 +144,7 @@ public class MainActivity extends Activity {
 						.setNegativeButton("Попробовать позже",
 								new DialogInterface.OnClickListener() {
 									public void onClick(DialogInterface dialog,
-											int id) {
+														int id) {
 										dialog.cancel();
 									}
 								});
@@ -214,67 +221,68 @@ public class MainActivity extends Activity {
 					AlertDialog alert = builder.create();
 					alert.show();
 					break;
-			case "\"":
-				flagauth = true;
-				try {
-					context = MainActivity.this;
-					ParseJSON.parseStud(Variable.stringresponse_stud, context,
-							Variable.group);
-					Cursor cursorst = sqh.getAllStudData();
-					while (cursorst.moveToNext()) {
-						studid = cursorst.getString(cursorst
-								.getColumnIndex(DataBase.studID));
+				case "\"":
+					flagauth = true;
+					try {
+						context = MainActivity.this;
+						ParseJSON.parseStud(Variable.stringresponse_stud, context,
+								Variable.group);
+						Cursor cursorst = sqh.getAllStudData();
+						while (cursorst.moveToNext()) {
+							studid = cursorst.getString(cursorst
+									.getColumnIndex(DataBase.studID));
+						}
+						cursorst.close();
+						Lect_T = new LectTask();
+						Lect_T.execute(Variable.group, Variable.stringresponse_lect);
+						Test_T = new TestTask();
+						Test_T.execute(Variable.group, studid,
+								Variable.stringresponse_test);
+						Statist_T = new StatistTask();
+						Statist_T.execute(studid, Variable.group,
+								Variable.stringresponse_statist);
+						File checkDir = new File(getFilesDir() + "/mpeiClient/imge");
+						if (checkDir.exists()) {
+						}
+						else {
+							checkDir.mkdirs();
+						}
+						String ds, gh;
+						imagedownloadTask = new ImgDownloadTask(MainActivity.this);
+						ds = "ava";
+						gh = Variable.URL_avatar + Variable.lgnm + ".JPG";
+						File sourceFile = new File(getFilesDir()
+								+ "/mpeiClient/imge/" + ds + ".jpeg");
+						if (sourceFile.isFile()) {
+							myProgress = (int) (myProgress + per1);
+							pb.setProgress(myProgress);
+						}
+						else {
+							flav = true;
+							imagedownloadTask.execute(gh, ds);
+						}
 					}
-					cursorst.close();
-					Lect_T = new LectTask();
-					Lect_T.execute(Variable.group, Variable.stringresponse_lect);
-					Test_T = new TestTask();
-					Test_T.execute(Variable.group, studid,
-							Variable.stringresponse_test);
-					Statist_T = new StatistTask();
-					Statist_T.execute(studid, Variable.group,
-							Variable.stringresponse_statist);
-					File checkDir = new File(getFilesDir() + "/mpeiClient/imge");
-					if (checkDir.exists()) {
+					catch (Exception e) {
+						e.printStackTrace();
 					}
-					else {
-						checkDir.mkdirs();
-					}
-					String ds, gh;
-					imagedownloadTask = new ImgDownloadTask(MainActivity.this);
-					ds = "ava";
-					gh = Variable.URL_avatar + Variable.lgnm + ".JPG";
-					File sourceFile = new File(getFilesDir()
-							+ "/mpeiClient/imge/" + ds + ".jpeg");
-					if (sourceFile.isFile()) {
-						myProgress = (int) (myProgress + per1);
-						pb.setProgress(myProgress);
-					}
-					else {
-						flav = true;
-						imagedownloadTask.execute(gh, ds);
-					}
-				}
-				catch (Exception e) {
-					e.printStackTrace();
-				}
-				break;
-			default:
-				AlertDialog.Builder builder2 = new AlertDialog.Builder(
-						MainActivity.this);
-				builder2.setTitle("������")
-						.setMessage("���������� ������ �������")
-						.setCancelable(false)
-						.setNegativeButton("��",
-								new DialogInterface.OnClickListener() {
-									public void onClick(DialogInterface dialog,
-											int id) {
-										dialog.cancel();
-									}
-								});
-				AlertDialog alert2 = builder2.create();
-				alert2.show();
-				break;
+					break;
+				default:
+					but.setEnabled(true);
+					AlertDialog.Builder builder2 = new AlertDialog.Builder(
+							MainActivity.this);
+					builder2.setTitle("Ошибка")
+							.setMessage("Внутренняя ошибка сервера")
+							.setCancelable(false)
+							.setNegativeButton("ОК",
+									new DialogInterface.OnClickListener() {
+										public void onClick(DialogInterface dialog,
+															int id) {
+											dialog.cancel();
+										}
+									});
+					AlertDialog alert2 = builder2.create();
+					alert2.show();
+					break;
 			}
 		}
 
@@ -364,7 +372,7 @@ public class MainActivity extends Activity {
 				ad.setCancelable(true);
 				ad.setOnCancelListener(new OnCancelListener() {
 					public void onCancel(DialogInterface dialog) {
-						Toast.makeText(context, "�� ������ �� �������",
+						Toast.makeText(context, "Вы ничего не выбрали",
 								Toast.LENGTH_LONG).show();
 					}
 				});

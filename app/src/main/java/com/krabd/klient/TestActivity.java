@@ -174,8 +174,8 @@ public class TestActivity extends TabActivity {
 			public void onClick(View v) {
 				if ((!(an.length()==0)  || aw == "1" || aw == "2" || aw == "3" || aw == "4")) {
 
-
-					if (clo[tabHost.getCurrentTab() + 1] == 1) {
+					hideSoftKeyboard();
+					if (clo[tabHost.getCurrentTab()] == 1) {
 						btn.setEnabled(false);
 					} else {
 						btn.setEnabled(true);

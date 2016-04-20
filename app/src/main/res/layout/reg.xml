@@ -28,7 +28,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/progressBar"
                     android:max="0"
-                    android:progress="100"
+                    android:progress="200"
                     android:indeterminate="false" />
 
                 <TextView
