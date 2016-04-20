@@ -180,6 +180,7 @@ public class TestActivity extends TabActivity {
 					} else {
 						btn.setEnabled(true);
 					}
+
 					hideSoftKeyboard();
 					clo[tabnum] = 1;
 					int y = tabHost.getCurrentTab();
@@ -187,15 +188,23 @@ public class TestActivity extends TabActivity {
 					switch (typeint) {
 						case 1:
 							answ[tabnum] = aw;
+							an.setText("");
+							aw = "0";
 							break;
 						case 2:
 							answ[tabnum] = an.getText().toString();
+							an.setText("");
+							aw = "0";
 							break;
 						case 3:
 							answ[tabnum] = aw;
+							an.setText("");
+							aw = "0";
 							break;
 						case 4:
 							answ[tabnum] = an.getText().toString();
+							an.setText("");
+							aw = "0";
 							break;
 
 
@@ -217,6 +226,7 @@ public class TestActivity extends TabActivity {
 									});
 					AlertDialog alert7 = builder7.create();
 					alert7.show();
+					an.setText("");
 				}
 			}
 		});
