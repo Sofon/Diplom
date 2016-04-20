@@ -87,6 +87,7 @@ public class RegActivity extends Activity implements OnClickListener {
 				|| grp.getText().toString().equals("")
 				|| nm.getText().toString().equals("")
 				|| srnm.getText().toString().equals("")) {
+			btn.setEnabled(true);
 			AlertDialog.Builder builder = new AlertDialog.Builder(
 					RegActivity.this);
 			builder.setTitle("Ошибка")
@@ -244,6 +245,7 @@ public class RegActivity extends Activity implements OnClickListener {
 				}
 			}
 			else {
+				btn.setEnabled(true);
 				AlertDialog.Builder builder = new AlertDialog.Builder(
 						RegActivity.this);
 				builder.setTitle("Ошибка")
@@ -258,7 +260,6 @@ public class RegActivity extends Activity implements OnClickListener {
 								});
 				AlertDialog alert = builder.create();
 				alert.show();
-				btn.setEnabled(true);
 				pss.setText("");
 				pss1.setText("");
 			}
@@ -361,6 +362,7 @@ public class RegActivity extends Activity implements OnClickListener {
 					grp.setText("");
 					pss.setText("");
 					pss1.setText("");
+					btn.setEnabled(true);
 					break;
 				case"PassLose":
 					AlertDialog.Builder builder4 = new AlertDialog.Builder(
