@@ -47,6 +47,7 @@ public class TestActivity extends TabActivity {
 	protected static String[] quenm;
 	private EditText an;
 	private TextView qu;
+	int y;
 	private Button btn, rezbtn;
 	private RadioButton r1, r2, r3, r4;
 	private RadioGroup rad, rad2;
@@ -183,28 +184,31 @@ public class TestActivity extends TabActivity {
 
 					hideSoftKeyboard();
 					clo[tabnum] = 1;
-					int y = tabHost.getCurrentTab();
-					tabHost.setCurrentTab(y+1);
+
 					switch (typeint) {
 						case 1:
 							answ[tabnum] = aw;
-							an.setText("");
+							int y = tabHost.getCurrentTab();
+							tabHost.setCurrentTab(y+1);
 							aw = "0";
 							break;
 						case 2:
 							answ[tabnum] = an.getText().toString();
-							an.setText("");
-							aw = "0";
+							y = tabHost.getCurrentTab();
+							tabHost.setCurrentTab(y+1);
+							an.setText("0");
 							break;
 						case 3:
 							answ[tabnum] = aw;
-							an.setText("");
+							y = tabHost.getCurrentTab();
+							tabHost.setCurrentTab(y+1);
 							aw = "0";
 							break;
 						case 4:
 							answ[tabnum] = an.getText().toString();
-							an.setText("");
-							aw = "0";
+							y = tabHost.getCurrentTab();
+							tabHost.setCurrentTab(y+1);
+							an.setText("0");
 							break;
 
 
@@ -242,6 +246,8 @@ public class TestActivity extends TabActivity {
 								+ answ[i - 1] + "\",";
 				}
 				boolean checkCon;
+				aw = "0";
+				an.setText("0");
 				checkCon = checkInternetConnection();
 				if (checkCon) {
 					rezbtn.setEnabled(false);

@@ -317,54 +317,42 @@ public class MainActivity extends Activity {
 				final int length = cursor.getCount();
 				final String[] lecnm = new String[length];
 				per = (int) Math.floor(40 / length);
-				String title = "Предупреждение";
-				String message = "Сейчас произойдет проверка обновлений лекций. Возможно будут скачаны новые материалы."
-						+ " Вы согласны?";
-				String button1String = "Да";
-				String button2String = "Нет";
-				ad = new AlertDialog.Builder(context);
-				ad.setTitle(title);
-				ad.setMessage(message);
-				ad.setPositiveButton(button1String, new OnClickListener() {
-					public void onClick(DialogInterface dialog, int arg1) {
-						int i = 0;
-						while (cursor.moveToNext()) {
-							// GET COLUMN INDICES + VALUES OF THOSE COLUMNS
-							String name = cursor.getString(cursor
-									.getColumnIndex(DataBase.lecURL));
-							lecnm[i] = name;
-							i++;
-						}
-						cursor.close();
-						String gh, ds;
-						File checkDir = new File("sdcard/mpeiClient/lect");
-						if (checkDir.exists()) {
-						}
-						else {
-							checkDir.mkdirs();
-						}
-						for (int j = 0; j < length - 1; j++) {
-							ds = Integer.toString(j + 1);
-							File sourceFile = new File(
-									"sdcard/mpeiClient/lect/lect" + ds + ".pdf");
-							if (sourceFile.isFile()) {
-								myProgress = (int) (myProgress + per);
-								pb.setProgress(myProgress);
-							}
-							else {
-								downloadTask = new LectDownloadTask(context);
-								gh = lecnm[j];
-								downloadTask.execute(gh, ds);
-							}
-						}
-						downloadTask1 = new LastLectDownloadTask(
-								MainActivity.this);
-						ds = Integer.toString(length);
-						gh = lecnm[length - 1];
-						downloadTask1.execute(gh, ds);
+				int i = 0;
+				while (cursor.moveToNext()) {
+					// GET COLUMN INDICES + VALUES OF THOSE COLUMNS
+					String name = cursor.getString(cursor
+							.getColumnIndex(DataBase.lecURL));
+					lecnm[i] = name;
+					i++;
+				}
+				cursor.close();
+				String gh, ds;
+				File checkDir = new File("sdcard/mpeiClient/lect");
+				if (checkDir.exists()) {
+				} else {
+					checkDir.mkdirs();
+				}
+				for (int j = 0; j < length - 1; j++) {
+					ds = Integer.toString(j + 1);
+					File sourceFile = new File(
+							"sdcard/mpeiClient/lect/lect" + ds + ".pdf");
+					if (sourceFile.isFile()) {
+						myProgress = (int) (myProgress + per);
+						pb.setProgress(myProgress);
+					} else {
+						downloadTask = new LectDownloadTask(context);
+						gh = lecnm[j];
+						downloadTask.execute(gh, ds);
 					}
-				});
-				ad.setNegativeButton(button2String, new OnClickListener() {
+				}
+				downloadTask1 = new LastLectDownloadTask(
+						MainActivity.this);
+				ds = Integer.toString(length);
+				gh = lecnm[length - 1];
+				downloadTask1.execute(gh, ds);
+
+				;
+				ad.setNegativeButton("Нет", new OnClickListener() {
 					public void onClick(DialogInterface dialog, int arg1) {
 						ad.show();
 					}
