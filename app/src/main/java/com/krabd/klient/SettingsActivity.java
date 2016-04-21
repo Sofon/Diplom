@@ -8,10 +8,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.DialogInterface.OnClickListener;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
+import android.content.Context;
 
 public class SettingsActivity extends Activity {
 
@@ -35,6 +37,7 @@ public class SettingsActivity extends Activity {
 		ad = new AlertDialog.Builder(context);
 		ad.setTitle(title);
 		ad.setMessage(message);
+		deleteDatabase("lec_database.db");
 		ad.setPositiveButton(button1String, new OnClickListener() {
 			public void onClick(DialogInterface dialog, int arg1) {
 				File sourceFile = new File("sdcard/mpeiClient");
@@ -62,6 +65,8 @@ public class SettingsActivity extends Activity {
 								});
 				AlertDialog alert2 = builder2.create();
 				alert2.show();
+				Intent intent = new Intent(SettingsActivity.this, MainActivity.class);
+				startActivity(intent);
 			}
 		});
 		ad.setNegativeButton(button2String, new OnClickListener() {

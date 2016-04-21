@@ -219,6 +219,7 @@ public class MainActivity extends Activity {
 										}
 									});
 					AlertDialog alert = builder.create();
+					but.setEnabled(true);
 					alert.show();
 					break;
 				case "\"":
@@ -351,7 +352,6 @@ public class MainActivity extends Activity {
 				gh = lecnm[length - 1];
 				downloadTask1.execute(gh, ds);
 
-				;
 				ad.setNegativeButton("Нет", new OnClickListener() {
 					public void onClick(DialogInterface dialog, int arg1) {
 						ad.show();

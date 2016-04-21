@@ -10,6 +10,7 @@
         android:layout_alignParentTop="true"
         android:background="#151414"
         android:columnCount="11"
+
         android:orientation="horizontal"
 	tools:context=".TestActivity">
 
@@ -106,6 +107,17 @@
                     </RadioGroup>
 			</LinearLayout>
 
+			<Button
+android:id="@+id/answer"
+android:layout_width="240dp"
+android:layout_height="35dp"
+android:layout_column="1"
+android:layout_columnSpan="10"
+android:layout_row="20"
+android:onClick="onClick"
+android:text="Ответить"
+                android:layout_gravity="center_horizontal|top" />
+
 			<FrameLayout
 				android:layout_width="match_parent"
 				android:layout_height="44dp"
@@ -127,16 +139,6 @@
                         <requestFocus />
                     </EditText>
 
-				<Button
-                        android:id="@+id/answer"
-                        android:layout_width="240dp"
-                        android:layout_height="35dp"
-                        android:layout_column="1"
-                        android:layout_columnSpan="10"
-                    android:layout_row="20"
-                        android:onClick="onClick"
-                        android:text="Ответить"
-					android:layout_gravity="center_horizontal|top" />
 			</FrameLayout>
 
 			<Button
