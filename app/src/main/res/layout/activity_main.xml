@@ -83,7 +83,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/group"
                     android:layout_gravity="center_horizontal"
-                    android:text="А-07-12"
+                    android:text="A-07-12"
                     android:singleLine="true" />
 
                 <Button
