@@ -86,6 +86,7 @@ public class MenuActivity extends Activity {
 				Intent intent = new Intent(MenuActivity.this,
 						MainActivity.class);
 				startActivity(intent);
+				deleteDatabase("lec_database.db");
 			}
 		});
 		alertDialog.setButton2("Нет", new DialogInterface.OnClickListener() {

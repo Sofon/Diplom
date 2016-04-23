@@ -124,6 +124,8 @@ public class MainActivity extends Activity {
 								}
 							});
 			AlertDialog alert = builder.create();
+			but.setEnabled(true);
+			pb.setVisibility(View.INVISIBLE);
 			alert.show();
 		}
 		else {
@@ -149,6 +151,8 @@ public class MainActivity extends Activity {
 									}
 								});
 				AlertDialog alert = builder.create();
+				but.setEnabled(true);
+				pb.setVisibility(View.INVISIBLE);
 				alert.show();
 			}
 		}
@@ -220,6 +224,7 @@ public class MainActivity extends Activity {
 									});
 					AlertDialog alert = builder.create();
 					but.setEnabled(true);
+					pb.setVisibility(View.INVISIBLE);
 					alert.show();
 					break;
 				case "\"":
@@ -282,6 +287,8 @@ public class MainActivity extends Activity {
 										}
 									});
 					AlertDialog alert2 = builder2.create();
+					but.setEnabled(true);
+					pb.setVisibility(View.INVISIBLE);
 					alert2.show();
 					break;
 			}
@@ -365,6 +372,8 @@ public class MainActivity extends Activity {
 					}
 				});
 				ad.show();
+				but.setEnabled(true);
+				pb.setVisibility(View.INVISIBLE);
 				sqdb.close();
 				sqh.close();
 			}
