@@ -8,9 +8,11 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -21,7 +23,7 @@ import android.widget.TextView;
 public class MenuActivity extends Activity {
 
 	private TextView ns;
-
+	Context context;
 	DataBase sqh = new DataBase(this);
 //	ImageView img;
 	String name;
@@ -71,7 +73,12 @@ public class MenuActivity extends Activity {
 		Intent intent = new Intent(MenuActivity.this, StatistActivity.class);
 		startActivity(intent);
 	}
-
+	void DeleteRecursive(File fileOrDirectory) {
+		if (fileOrDirectory.isDirectory())
+			for (File child : fileOrDirectory.listFiles())
+				DeleteRecursive(child);
+		fileOrDirectory.delete();
+	}
 	@SuppressWarnings("deprecation")
 	@Override
 	public void onBackPressed() {
@@ -82,11 +89,14 @@ public class MenuActivity extends Activity {
 		alertDialog.setMessage("Вы действительно хотите выйти?");
 		alertDialog.setButton("Да", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
-				sqh.insertStudTable(Variable.id, name, surname, "false", Variable.group);
+				deleteDatabase("lec_database.db");
+				File sourceFile = new File("sdcard/mpeiClient");
+				DeleteRecursive(sourceFile);
+				File sourceFile1 = new File(getFilesDir() + "/mpeiClient");
+				DeleteRecursive(sourceFile1);
 				Intent intent = new Intent(MenuActivity.this,
 						MainActivity.class);
 				startActivity(intent);
-				deleteDatabase("lec_database.db");
 			}
 		});
 		alertDialog.setButton2("Нет", new DialogInterface.OnClickListener() {
@@ -97,6 +107,7 @@ public class MenuActivity extends Activity {
 		// Set the Icon for the Dialog
 		alertDialog.setIcon(R.drawable.ic_launcher);
 		alertDialog.show();
+
 	}
 
 	@Override

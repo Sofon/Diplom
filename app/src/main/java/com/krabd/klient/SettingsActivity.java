@@ -37,9 +37,9 @@ public class SettingsActivity extends Activity {
 		ad = new AlertDialog.Builder(context);
 		ad.setTitle(title);
 		ad.setMessage(message);
-		deleteDatabase("lec_database.db");
 		ad.setPositiveButton(button1String, new OnClickListener() {
 			public void onClick(DialogInterface dialog, int arg1) {
+				deleteDatabase("lec_database.db");
 				File sourceFile = new File("sdcard/mpeiClient");
 				DeleteRecursive(sourceFile);
 				File sourceFile1 = new File(getFilesDir() + "/mpeiClient");
@@ -83,7 +83,7 @@ public class SettingsActivity extends Activity {
 		ad.show();
 	}
 
-	void DeleteRecursive(File fileOrDirectory) {
+        void DeleteRecursive(File fileOrDirectory) {
 		if (fileOrDirectory.isDirectory())
 			for (File child : fileOrDirectory.listFiles())
 				DeleteRecursive(child);

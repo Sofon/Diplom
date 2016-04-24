@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-
+import java.util.regex.Pattern
 android {
     signingConfigs {
         config {
@@ -32,6 +32,8 @@ android {
     }
 }
 
+
+
 android {
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES.txt'
@@ -39,6 +41,25 @@ android {
         exclude 'META-INF/NOTICE.txt'
         exclude 'META-INF/LICENSE'
         exclude 'META-INF/LICENSE.txt'
+
+
+    }
+}
+
+task('increaseVersionCode') << {
+    def manifestFile = file("C:\\Users\\Sofon\\AndroidStudioProjects\\Client6\\app\\src\\main\\AndroidManifest.xml")
+    def pattern = Pattern.compile("versionCode=\"(\\d+)\"")
+    def manifestText = manifestFile.getText()
+    def matcher = pattern.matcher(manifestText)
+    matcher.find()
+    def versionCode = Integer.parseInt(matcher.group(1))
+    def manifestContent = matcher.replaceAll("versionCode=\"" + ++versionCode + "\"")
+    manifestFile.write(manifestContent)
+}
+
+tasks.whenTaskAdded { task ->
+    if (task.name == 'generateReleaseBuildConfig') {
+        task.dependsOn 'increaseVersionCode'
     }
 }
 
