@@ -12,11 +12,12 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 import android.content.Context;
 
 public class SettingsActivity extends Activity {
-
+	Button but;
 	DataBase sqh = new DataBase(this);
 	AlertDialog.Builder ad;
 	Context context;
@@ -28,6 +29,8 @@ public class SettingsActivity extends Activity {
 	}
 
 	public void onClick(View v) {
+		but = (Button)  findViewById(R.id.button);
+		but.setEnabled(false);
 		context = SettingsActivity.this;
 		String title = "Предупреждение";
 		String message = "Данная операция удалит все лекции и картинки."
@@ -39,11 +42,11 @@ public class SettingsActivity extends Activity {
 		ad.setMessage(message);
 		ad.setPositiveButton(button1String, new OnClickListener() {
 			public void onClick(DialogInterface dialog, int arg1) {
-				deleteDatabase("lec_database.db");
 				File sourceFile = new File("sdcard/mpeiClient");
 				DeleteRecursive(sourceFile);
 				File sourceFile1 = new File(getFilesDir() + "/mpeiClient");
 				DeleteRecursive(sourceFile1);
+				deleteDatabase("lec_database.db");
 				SQLiteDatabase sqdb = sqh.getWritableDatabase();
 				sqh.dropTable(sqdb, DataBase.LEC_TABLE);
 				sqh.createLecTable(sqdb);
@@ -60,13 +63,16 @@ public class SettingsActivity extends Activity {
 								new DialogInterface.OnClickListener() {
 									public void onClick(DialogInterface dialog,
 														int id) {
+										Intent intent = new Intent(SettingsActivity.this, MainActivity.class);
+										but.setEnabled(true);
+										startActivity(intent);
 										dialog.cancel();
 									}
 								});
 				AlertDialog alert2 = builder2.create();
 				alert2.show();
-				Intent intent = new Intent(SettingsActivity.this, MainActivity.class);
-				startActivity(intent);
+
+
 			}
 		});
 		ad.setNegativeButton(button2String, new OnClickListener() {

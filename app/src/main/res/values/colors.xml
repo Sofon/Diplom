@@ -3,4 +3,5 @@
     <color name="orange">#003196</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="holo_primary">#f1f1f1</color>
 </resources>

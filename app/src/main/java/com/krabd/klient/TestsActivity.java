@@ -46,13 +46,28 @@ public class TestsActivity extends ListActivity implements OnRefreshListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.getResources().getLayout(R.layout.tests);
+		onRefresh();
 		setContentView(R.layout.tests);
 		swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
 		swipeLayout.setOnRefreshListener(TestsActivity.this);
+
 		//swipeLayout.setColorScheme(Color.RED, Color.GREEN, Color.BLUE, Color.CYAN);
 		this.getListView();
-		fillData();
+		DataBase sqh = new DataBase(TestsActivity.this);
+		Cursor cursor = sqh.getAllTestData();
+		startManagingCursor(cursor);
+		String[] from = new String[] { DataBase.testNAME,
+				DataBase.testDISC };
+		int[] to = new int[] { R.id.lname, R.id.ldisc };
+		// Теперь создадим адаптер массива и установим его для отображения наших
+		// данных
+		SimpleCursorAdapter notes = new SimpleCursorAdapter(this,
+				R.layout.list_item, cursor, from, to, 0);
+		setListAdapter(notes);
+		notes.notifyDataSetChanged();
 		registerForContextMenu(getListView());
+		fillData();
+
 	}
 
 	@Override
@@ -286,7 +301,7 @@ public class TestsActivity extends ListActivity implements OnRefreshListener {
 	}
 
 	@SuppressWarnings("deprecation")
-	private void fillData() {
+	public void fillData() {
 		DataBase sqh = new DataBase(TestsActivity.this);
 		Cursor cursor = sqh.getAllTestData();
 		startManagingCursor(cursor);

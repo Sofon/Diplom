@@ -1,6 +1,8 @@
 package com.krabd.klient;
 
 import java.io.File;
+
+import android.app.ActionBar;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import java.io.IOException;
@@ -9,8 +11,6 @@ import java.util.List;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
-
-import com.krabd.klient.R;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.app.Activity;
@@ -20,7 +20,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -50,19 +49,23 @@ public class MainActivity extends Activity {
 	DataBase sqh = new DataBase(this);
 	AlertDialog.Builder ad;
 	Context context;
+	Button regb;
 	int length;
 	String studid;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
 		setContentView(R.layout.activity_main);
 		logi = (EditText) findViewById(R.id.log);
 		pas = (EditText) findViewById(R.id.pass);
 		gro = (EditText) findViewById(R.id.group);
 		but = (Button)  findViewById(R.id.button1);
+		regb = (Button) findViewById(R.id.button2);
 		pb = (ProgressBar) findViewById(R.id.progressBar2);
 		pb.setVisibility(View.GONE);
+
 		try {
 			Cursor cursor = sqh.getAllStudData();
 			int length = cursor.getCount();
@@ -96,6 +99,7 @@ public class MainActivity extends Activity {
 		myProgress = 0;
 		pb.setMax(100);
 		but.setEnabled(false);
+		regb.setEnabled(false);
 		pb.setVisibility(View.VISIBLE);
 		myProgress++;
 		pb.setProgress(myProgress);
@@ -105,6 +109,7 @@ public class MainActivity extends Activity {
 		if (Variable.lgnm.equals("") || Variable.pssw.equals("")
 				|| Variable.group.equals("")) {
 			but.setEnabled(true);
+			regb.setEnabled(true);
 			AlertDialog.Builder builder = new AlertDialog.Builder(
 					MainActivity.this);
 			builder.setTitle("Ошибка")
@@ -119,6 +124,7 @@ public class MainActivity extends Activity {
 							});
 			AlertDialog alert = builder.create();
 			but.setEnabled(true);
+			regb.setEnabled(true);
 			pb.setVisibility(View.INVISIBLE);
 			alert.show();
 		}
@@ -132,6 +138,7 @@ public class MainActivity extends Activity {
 			}
 			else {
 				but.setEnabled(true);
+				regb.setEnabled(true);
 				AlertDialog.Builder builder = new AlertDialog.Builder(
 						MainActivity.this);
 				builder.setTitle("Ошибка")
@@ -146,6 +153,7 @@ public class MainActivity extends Activity {
 								});
 				AlertDialog alert = builder.create();
 				but.setEnabled(true);
+				regb.setEnabled(true);
 				pb.setVisibility(View.INVISIBLE);
 				alert.show();
 			}
@@ -218,6 +226,7 @@ public class MainActivity extends Activity {
 									});
 					AlertDialog alert = builder.create();
 					but.setEnabled(true);
+					regb.setEnabled(true);
 					pb.setVisibility(View.INVISIBLE);
 					alert.show();
 					break;
@@ -268,6 +277,7 @@ public class MainActivity extends Activity {
 					break;
 				default:
 					but.setEnabled(true);
+					regb.setEnabled(true);
 					AlertDialog.Builder builder2 = new AlertDialog.Builder(
 							MainActivity.this);
 					builder2.setTitle("Ошибка")
@@ -282,6 +292,7 @@ public class MainActivity extends Activity {
 									});
 					AlertDialog alert2 = builder2.create();
 					but.setEnabled(true);
+					regb.setEnabled(true);
 					pb.setVisibility(View.INVISIBLE);
 					alert2.show();
 					break;
@@ -367,6 +378,7 @@ public class MainActivity extends Activity {
 				});
 				ad.show();
 				but.setEnabled(true);
+				regb.setEnabled(true);
 				pb.setVisibility(View.INVISIBLE);
 				sqdb.close();
 				sqh.close();

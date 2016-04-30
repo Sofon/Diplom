@@ -193,7 +193,7 @@ public class TestActivity extends TabActivity {
 							aw = "0";
 							break;
 						case 2:
-							answ[tabnum] = an.getText().toString().toLowerCase();
+							answ[tabnum] = an.getText().toString().toLowerCase().trim();
 							y = tabHost.getCurrentTab();
 							tabHost.setCurrentTab(y+1);
 							an.setText("0");
@@ -205,7 +205,7 @@ public class TestActivity extends TabActivity {
 							aw = "0";
 							break;
 						case 4:
-							answ[tabnum] = an.getText().toString().toLowerCase();
+							answ[tabnum] = an.getText().toString().toLowerCase().trim();
 							y = tabHost.getCurrentTab();
 							tabHost.setCurrentTab(y+1);
 							an.setText("0");
