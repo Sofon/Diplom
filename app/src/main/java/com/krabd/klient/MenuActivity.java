@@ -99,6 +99,7 @@ public class MenuActivity extends Activity {
 				Intent intent = new Intent(MenuActivity.this,
 						MainActivity.class);
 				startActivity(intent);
+
 			}
 		});
 		alertDialog.setButton2("Нет", new DialogInterface.OnClickListener() {

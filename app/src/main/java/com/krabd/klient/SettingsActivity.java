@@ -74,6 +74,7 @@ public class SettingsActivity extends Activity {
 
 
 			}
+
 		});
 		ad.setNegativeButton(button2String, new OnClickListener() {
 			public void onClick(DialogInterface dialog, int arg1) {
@@ -84,6 +85,7 @@ public class SettingsActivity extends Activity {
 			public void onCancel(DialogInterface dialog) {
 				Toast.makeText(context, "Вы ничего не выбрали",
 						Toast.LENGTH_LONG).show();
+				but.setEnabled(true);
 			}
 		});
 		ad.show();
