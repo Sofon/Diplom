@@ -42,7 +42,7 @@ public class SettingsActivity extends Activity {
 		ad.setMessage(message);
 		ad.setPositiveButton(button1String, new OnClickListener() {
 			public void onClick(DialogInterface dialog, int arg1) {
-				File sourceFile = new File("sdcard/mpeiClient");
+				File sourceFile = new File(getFilesDir().getPath());
 				DeleteRecursive(sourceFile);
 				File sourceFile1 = new File(getFilesDir() + "/mpeiClient");
 				DeleteRecursive(sourceFile1);

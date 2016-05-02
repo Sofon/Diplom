@@ -8,6 +8,7 @@ import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -122,6 +123,15 @@ public class StatistActivity extends ListActivity implements OnRefreshListener {
 		protected void onProgressUpdate(Integer... progress) {
 
 		}
+	}
+	@SuppressWarnings("deprecation")
+	@Override
+	public void onBackPressed() {
+
+
+		sqh.close();
+		Intent intent = new Intent(StatistActivity.this, MenuActivity.class);
+		startActivity(intent);
 	}
 
 	@SuppressWarnings("deprecation")

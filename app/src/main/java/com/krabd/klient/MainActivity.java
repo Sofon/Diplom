@@ -561,8 +561,6 @@ public class MainActivity extends Activity {
 		protected void onPostExecute(String result) {
 			myProgress = (int) (myProgress + per);
 			pb.setProgress(myProgress);
-			Intent intent = new Intent(MainActivity.this, MenuActivity.class);
-			startActivity(intent);
 		}
 
 		@Override

@@ -19,6 +19,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.view.View;
 import android.widget.ListView;
@@ -37,6 +38,7 @@ public class LekciiActivity extends ListActivity implements OnRefreshListener {
 	AlertDialog.Builder ad;
 	Context context;
 	Cursor cursor;
+	ListView lv;
 	String[] lecnm;
 	SimpleCursorAdapter notes;
 	int clonum;
@@ -52,6 +54,10 @@ public class LekciiActivity extends ListActivity implements OnRefreshListener {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.lects);
+		this.getListView();
+	    lv = getListView();
+		lv.setEnabled(false);
+		onRefresh();
 		swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
 		swipeLayout.setOnRefreshListener(LekciiActivity.this);
 		//swipeLayout.setColorScheme(Color.RED, Color.GREEN, Color.BLUE,
@@ -72,6 +78,7 @@ public class LekciiActivity extends ListActivity implements OnRefreshListener {
 					Lect_T.execute(Variable.group, Variable.stringresponse_lect);
 				}
 			}, 4000);
+
 		}
 		else {
 			swipeLayout.setRefreshing(false);
@@ -112,6 +119,7 @@ public class LekciiActivity extends ListActivity implements OnRefreshListener {
 			Variable.stringresponse_lect = POSTRequest.POST_Data(
 					nameValuePairs, Variable.URL_lect);
 			return Variable.stringresponse_lect;
+
 		}
 
 		protected void onPostExecute(String result) {
@@ -120,6 +128,7 @@ public class LekciiActivity extends ListActivity implements OnRefreshListener {
 				sqh.dropTable(sqdb, DataBase.LEC_TABLE);
 				sqh.createLecTable(sqdb);
 				context = LekciiActivity.this;
+
 				ParseJSON.parseLec(Variable.stringresponse_lect, context);
 				final Cursor cursor = sqh.getAllLecData();
 				final int length = cursor.getCount();
@@ -136,7 +145,7 @@ public class LekciiActivity extends ListActivity implements OnRefreshListener {
 				fillData();
 				swipeLayout.setRefreshing(false);
 				String gh, ds;
-				File checkDir = new File("sdcard/mpeiClient/lect");
+				File checkDir = new File(getFilesDir().getPath());
 				if (checkDir.exists()) {
 				}
 				else {
@@ -146,7 +155,7 @@ public class LekciiActivity extends ListActivity implements OnRefreshListener {
 					downloadTask = new LectDownloadTask(LekciiActivity.this);
 					ds = Integer.toString(j + 1);
 					gh = lecnm[j];
-					File sourceFile = new File("sdcard/mpeiClient/lect/lect"
+					File sourceFile = new File(getFilesDir().getPath()
 							+ ds + ".pdf");
 					if (sourceFile.isFile()) {
 					}
@@ -159,7 +168,9 @@ public class LekciiActivity extends ListActivity implements OnRefreshListener {
 				gh = lecnm[length - 1];
 				downloadTask1.execute(gh, ds);
 				sqdb.close();
+				lv.setEnabled(true);
 				sqh.close();
+
 			}
 			catch (Exception e) {
 				swipeLayout.setRefreshing(false);
@@ -193,7 +204,7 @@ public class LekciiActivity extends ListActivity implements OnRefreshListener {
 		@Override
 		protected String doInBackground(String... sUrl) {
 			String filepath;
-			filepath = "sdcard/mpeiClient/lect/lect" + sUrl[1] + ".pdf";
+			filepath = getFilesDir().getPath() + sUrl[1] + ".pdf";
 			return File_Server.download(sUrl[0], filepath);
 		}
 	}
@@ -224,7 +235,7 @@ public class LekciiActivity extends ListActivity implements OnRefreshListener {
 		@Override
 		protected String doInBackground(String... sUrl) {
 			String filepath;
-			filepath = "sdcard/mpeiClient/lect/lect" + sUrl[1] + ".pdf";
+			filepath = getFilesDir().getPath() + sUrl[1] + ".pdf";
 			return File_Server.download(sUrl[0], filepath);
 		}
 	}
@@ -246,9 +257,9 @@ public class LekciiActivity extends ListActivity implements OnRefreshListener {
 		super.onListItemClick(l, v, position, id);
 		String pos;
 		pos = String.valueOf(position + 1);
-		File checkDir = new File("sdcard/mpeiClient/lect");
+		File checkDir = new File(getFilesDir().getPath());
 		if (checkDir.exists()) {
-			File file = new File("sdcard/mpeiClient/lect/lect" + pos + ".pdf");
+			File file = new File(getFilesDir().getPath() + pos + ".pdf");
 			Intent intent = new Intent(Intent.ACTION_VIEW);
 			intent.setDataAndType(Uri.fromFile(file), "application/pdf");
 			intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);

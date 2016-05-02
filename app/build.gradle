@@ -37,11 +37,15 @@ android {
 android {
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES.txt'
-        exclude 'META-INF/NOTICE'
-        exclude 'META-INF/NOTICE.txt'
-        exclude 'META-INF/LICENSE'
         exclude 'META-INF/LICENSE.txt'
-
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/notice.txt'
+        exclude 'META-INF/license.txt'
+        exclude 'META-INF/dependencies.txt'
+        exclude 'META-INF/LGPL2.1'
 
     }
 }
@@ -66,8 +70,8 @@ tasks.whenTaskAdded { task ->
 dependencies {
     compile 'com.android.support:appcompat-v7:22.2.0'
     compile 'com.android.support:design:22.2.0'
-    compile files('libs/httpclient-4.1.jar')
-    compile files('libs/httpcore-4.1.jar')
-    compile files('libs/httpmime-4.1-beta1.jar')
+    compile files('libs/httpclient-4.5.2.jar')
+    compile files('libs/httpcore-4.4.4.jar')
+    compile files('libs/httpmime-4.5.2.jar')
     compile files('libs/universal-image-loader-1.9.3.jar')
 }
