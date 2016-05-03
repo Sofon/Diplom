@@ -102,6 +102,7 @@ public class TestsActivity extends ListActivity implements OnRefreshListener {
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 		// super.onBackPressed();
+		sqh.close();
 		Intent intent = new Intent(TestsActivity.this, MenuActivity.class);
 		startActivity(intent);
 	}

@@ -106,7 +106,7 @@ public class LekciiActivity extends ListActivity implements OnRefreshListener {
 	}
 
 	public void onBackPressed() {
-		// super.onBackPressed();
+		sqh.close();
 		Intent intent = new Intent(LekciiActivity.this, MenuActivity.class);
 		startActivity(intent);
 	}
