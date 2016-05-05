@@ -11,6 +11,7 @@ import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -44,7 +45,7 @@ public class SettingsActivity extends Activity {
 			public void onClick(DialogInterface dialog, int arg1) {
 				File sourceFile = new File(getFilesDir().getPath());
 				DeleteRecursive(sourceFile);
-				File sourceFile1 = new File(getFilesDir() + "/mpeiClient");
+				File sourceFile1 = new File(Environment.getExternalStoragePublicDirectory("DIRECTORY_DOCUMENTS").getPath() + "/mpeiClient");
 				DeleteRecursive(sourceFile1);
 				deleteDatabase("lec_database.db");
 				SQLiteDatabase sqdb = sqh.getWritableDatabase();
@@ -71,6 +72,7 @@ public class SettingsActivity extends Activity {
 								});
 				AlertDialog alert2 = builder2.create();
 				alert2.show();
+
 
 
 			}

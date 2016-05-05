@@ -56,8 +56,6 @@ public class LekciiActivity extends ListActivity implements OnRefreshListener {
 		setContentView(R.layout.lects);
 		this.getListView();
 	    lv = getListView();
-		lv.setEnabled(false);
-		onRefresh();
 		swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
 		swipeLayout.setOnRefreshListener(LekciiActivity.this);
 		//swipeLayout.setColorScheme(Color.RED, Color.GREEN, Color.BLUE,
@@ -145,7 +143,7 @@ public class LekciiActivity extends ListActivity implements OnRefreshListener {
 				fillData();
 				swipeLayout.setRefreshing(false);
 				String gh, ds;
-				File checkDir = new File(getFilesDir().getPath());
+				File checkDir = new File(Environment.getExternalStoragePublicDirectory("DIRECTORY_DOCUMENTS").getPath()+"/mpeiClient/");
 				if (checkDir.exists()) {
 				}
 				else {
@@ -155,7 +153,7 @@ public class LekciiActivity extends ListActivity implements OnRefreshListener {
 					downloadTask = new LectDownloadTask(LekciiActivity.this);
 					ds = Integer.toString(j + 1);
 					gh = lecnm[j];
-					File sourceFile = new File(getFilesDir().getPath()
+					File sourceFile = new File(Environment.getExternalStoragePublicDirectory("DIRECTORY_DOCUMENTS").getPath()+"/mpeiClient/"
 							+ ds + ".pdf");
 					if (sourceFile.isFile()) {
 					}
@@ -204,7 +202,7 @@ public class LekciiActivity extends ListActivity implements OnRefreshListener {
 		@Override
 		protected String doInBackground(String... sUrl) {
 			String filepath;
-			filepath = getFilesDir().getPath() + sUrl[1] + ".pdf";
+			filepath = Environment.getExternalStoragePublicDirectory("DIRECTORY_DOCUMENTS").getPath()+"/mpeiClient/" + sUrl[1] + ".pdf";
 			return File_Server.download(sUrl[0], filepath);
 		}
 	}
@@ -235,7 +233,7 @@ public class LekciiActivity extends ListActivity implements OnRefreshListener {
 		@Override
 		protected String doInBackground(String... sUrl) {
 			String filepath;
-			filepath = getFilesDir().getPath() + sUrl[1] + ".pdf";
+			filepath = Environment.getExternalStoragePublicDirectory("DIRECTORY_DOCUMENTS").getPath()+"/mpeiClient/" + sUrl[1] + ".pdf";
 			return File_Server.download(sUrl[0], filepath);
 		}
 	}
@@ -249,6 +247,7 @@ public class LekciiActivity extends ListActivity implements OnRefreshListener {
 		int[] to = new int[] { R.id.lname, R.id.ldisc };
 		notes = new SimpleCursorAdapter(this, R.layout.list_item, cursor, from,
 				to, 0);
+		lv.setEnabled(true);
 		setListAdapter(notes);
 	}
 
@@ -257,9 +256,9 @@ public class LekciiActivity extends ListActivity implements OnRefreshListener {
 		super.onListItemClick(l, v, position, id);
 		String pos;
 		pos = String.valueOf(position + 1);
-		File checkDir = new File(getFilesDir().getPath());
+		File checkDir = new File(Environment.getExternalStoragePublicDirectory("DIRECTORY_DOCUMENTS").getPath()+"/mpeiClient/");
 		if (checkDir.exists()) {
-			File file = new File(getFilesDir().getPath() + pos + ".pdf");
+			File file = new File(Environment.getExternalStoragePublicDirectory("DIRECTORY_DOCUMENTS").getPath()+"/mpeiClient/" + pos + ".pdf");
 			Intent intent = new Intent(Intent.ACTION_VIEW);
 			intent.setDataAndType(Uri.fromFile(file), "application/pdf");
 			intent.setFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);

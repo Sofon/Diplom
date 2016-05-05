@@ -20,6 +20,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Environment;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -340,7 +341,7 @@ public class MainActivity extends Activity {
 				}
 				cursor.close();
 				String gh, ds;
-				File checkDir = new File("sdcard/mpeiClient/lect");
+				File checkDir = new File(Environment.getExternalStoragePublicDirectory("DIRECTORY_DOCUMENTS").getPath()+"/mpeiClient/");
 				if (checkDir.exists()) {
 				} else {
 					checkDir.mkdirs();
@@ -348,7 +349,7 @@ public class MainActivity extends Activity {
 				for (int j = 0; j < length - 1; j++) {
 					ds = Integer.toString(j + 1);
 					File sourceFile = new File(
-							"sdcard/mpeiClient/lect/lect" + ds + ".pdf");
+							Environment.getExternalStoragePublicDirectory("DIRECTORY_DOCUMENTS").getPath()+"/mpeiClient/" + ds + ".pdf");
 					if (sourceFile.isFile()) {
 						myProgress = (int) (myProgress + per);
 						pb.setProgress(myProgress);

@@ -45,18 +45,28 @@ public class TestsActivity extends ListActivity implements OnRefreshListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		onRefresh();
 		this.getResources().getLayout(R.layout.tests);
 		setContentView(R.layout.tests);
 		swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
 		swipeLayout.setOnRefreshListener(TestsActivity.this);
+		swipeLayout.isRefreshing();
+		swipeLayout.post(new Runnable() {
+			@Override
+			public void run() {
+				swipeLayout.setRefreshing(true);
+			}
+	});
 		//swipeLayout.setColorScheme(Color.RED, Color.GREEN, Color.BLUE, Color.CYAN);
 		this.getListView();
 		lv = getListView();
 		lv.setEnabled(false);
 		registerForContextMenu(getListView());
-		onRefresh();
+		fillData();
 
 	}
+
+
 
 	@Override
 	public void onRefresh() {
@@ -145,6 +155,7 @@ public class TestsActivity extends ListActivity implements OnRefreshListener {
 
 				}
 				lv.setEnabled(true);
+				swipeLayout.setRefreshing(false);
 			}
 			catch (Exception e) {
 				e.printStackTrace();
@@ -225,6 +236,7 @@ public class TestsActivity extends ListActivity implements OnRefreshListener {
 				gh = lecnm[length - 1];
 				lastimagedownloadTask.execute(gh, ds);
 				sqh.close();
+				lv.setEnabled(true);
 			}
 			catch (Exception e) {
 				swipeLayout.setRefreshing(false);
@@ -300,7 +312,6 @@ public class TestsActivity extends ListActivity implements OnRefreshListener {
 				DataBase.testDISC };
 		int[] to = new int[] { R.id.lname, R.id.ldisc };
 		// Теперь создадим адаптер массива и установим его для отображения наших
-		// данных
 		SimpleCursorAdapter notes = new SimpleCursorAdapter(this,
 				R.layout.list_item, cursor, from, to, 0);
 		setListAdapter(notes);
