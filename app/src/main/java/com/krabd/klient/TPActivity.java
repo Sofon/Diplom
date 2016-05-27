@@ -334,7 +334,7 @@ public class TPActivity extends ListActivity implements SwipeRefreshLayout.OnRef
             testid[i] = name1;
             i++;
         }
-        Intent intent = new Intent(TPActivity.this, TestActivity.class);
+        Intent intent = new Intent(TPActivity.this, TTestActivity.class);
         intent.putExtra("num", testid[position]);
         startActivity(intent);
     }
