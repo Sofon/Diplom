@@ -75,6 +75,10 @@ public class MenuActivity extends Activity {
 		Intent intent = new Intent(MenuActivity.this, StatistActivity.class);
 		startActivity(intent);
 	}
+	public void onClick4(View v) {
+		Intent intent = new Intent(MenuActivity.this, TPActivity.class);
+		startActivity(intent);
+	}
 	void DeleteRecursive(File fileOrDirectory) {
 		if (fileOrDirectory.isDirectory())
 			for (File child : fileOrDirectory.listFiles())
