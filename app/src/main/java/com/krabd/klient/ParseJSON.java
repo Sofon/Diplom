@@ -125,6 +125,7 @@ public class ParseJSON {
 		String OutputData6 = "";
 		String OutputData7 = "";
 		String OutputData8 = "";
+		String OutputData9 = "";
 		try {
 			JSONArray jr = new JSONArray(stringresponse);
 			for (int i = 0; i < jr.length(); i++) {
@@ -156,8 +157,11 @@ public class ParseJSON {
 				OutputData8 = jb.getString("answ");
 				String questanswer = new String(
 						OutputData8.getBytes("ISO-8859-1"), "UTF-8");
+				OutputData9 = jb.getString("hits");
+				String urlhit = new String(
+						OutputData9.getBytes("ISO-8859-1"), "UTF-8");
 				sqh.insertQuestTable(testid, questtype, questtext, var1, var2,
-						var3, var4, imgurl, questanswer);
+						var3, var4, imgurl, questanswer, urlhit);
 			}
 		}
 		catch (Exception e) {

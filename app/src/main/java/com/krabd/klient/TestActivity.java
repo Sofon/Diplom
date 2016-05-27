@@ -45,6 +45,7 @@ public class TestActivity extends TabActivity {
 	protected static String[] var3;
 	protected static String[] var4;
 	protected static String[] quenm;
+	protected static String[] hit;
 	private EditText an;
 	private TextView qu;
 	int y;
@@ -87,7 +88,7 @@ public class TestActivity extends TabActivity {
 		r4 = (RadioButton) findViewById(R.id.radioButton4);
 		btn = (Button) findViewById(R.id.answer);
 		rezbtn = (Button) findViewById(R.id.rez);
-		for (int o = 0; o < 100; o++) {
+		for (int o = 0; o < 10; o++) {
 			clo[o] = 0;
 		}
 		num = getIntent().getStringExtra("num");
@@ -103,6 +104,7 @@ public class TestActivity extends TabActivity {
 		var4 = new String[length];
 		type = new String[length];
 		quenm = new String[length];
+		hit = new String[length];
 		int i = 0;
 		while (curstext.moveToNext()) {
 			// GET COLUMN INDICES + VALUES OF THOSE COLUMNS
@@ -127,6 +129,9 @@ public class TestActivity extends TabActivity {
 			String name6 = curstext.getString(curstext
 					.getColumnIndex(DataBase.questID));
 			quenm[i] = name6;
+			String name7 = curstext.getString(curstext
+					.getColumnIndex(DataBase.questID));
+			hit[i] = name7;
 			i++;
 		}
 		curstext.close();

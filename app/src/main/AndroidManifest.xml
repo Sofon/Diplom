@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.krabd.klient"
-    android:versionCode="235"
+    android:versionCode="276"
     android:versionName="1.0" >
 
     <uses-sdk
@@ -33,7 +33,7 @@
     		android:label="@string/menu_title" >
 		</activity>
 		<activity android:name=".TPActivity"
-			android:label="Подготовка" >
+			android:label="@string/train_title" >
 		</activity>
 		<activity android:name=".LekciiActivity"
     		android:label="@string/lekcii_title">

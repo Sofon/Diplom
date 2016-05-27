@@ -15,7 +15,7 @@
      <string name="tests_title">Выбор теста</string>
      <string name="statist_title">Оценки</string>
      <string name="settings_title">Настройки</string>
-     
+    <string name="train_title">Подготовка</string>
      <string name="app_descrip">Тута описание прожки</string>
      <string name="app_credits">А тута типа ссылочки на нас</string>
      

@@ -27,7 +27,6 @@ public class DataBase extends SQLiteOpenHelper {
 	}
 
 
-
 	public static final String STUD_TABLE = "student";
 
 	public static final String UIDs = "_id";
@@ -49,15 +48,16 @@ public class DataBase extends SQLiteOpenHelper {
 
 	public Cursor getAllStudData() {
 		SQLiteDatabase db = this.getWritableDatabase();
-		return db.query(STUD_TABLE, new String[] { UIDs, studID, studNAME,
-				studSURN, studAUTH, studGROUP }, null, // �������, �� ��������
-														// ���������� �������
+		return db.query(STUD_TABLE, new String[]{UIDs, studID, studNAME,
+						studSURN, studAUTH, studGROUP}, null, // �������, �� ��������
+				// ���������� �������
 				null, // ��������, �� �������� ���������� �������
 				null, null, null // �������, �� �������� �����������
-				);
+		);
 	}
+
 	void insertStudTable(String stID, String stname, String stsurn,
-			String auth, String stgr) {
+						 String auth, String stgr) {
 		SQLiteDatabase sqdb = this.getWritableDatabase();
 		dropTable(sqdb, STUD_TABLE);
 		createStudTable(sqdb);
@@ -69,7 +69,6 @@ public class DataBase extends SQLiteOpenHelper {
 		values.put(studGROUP, stgr);
 		sqdb.insert(STUD_TABLE, studID, values);
 	}
-
 
 
 	public static final String LEC_TABLE = "lec_table";
@@ -90,8 +89,8 @@ public class DataBase extends SQLiteOpenHelper {
 
 	public Cursor getAllLecData() {
 		SQLiteDatabase db = this.getWritableDatabase();
-		return db.query(LEC_TABLE, new String[] { lecID, lecNAME, lecDISC,
-				lecURL }, null, null, null, null, null);
+		return db.query(LEC_TABLE, new String[]{lecID, lecNAME, lecDISC,
+				lecURL}, null, null, null, null, null);
 	}
 
 	void insertLecTable(String lecname, String lecdisc, String lecurl) {
@@ -121,7 +120,7 @@ public class DataBase extends SQLiteOpenHelper {
 	public Cursor getAllTestData() {
 		SQLiteDatabase db = this.getWritableDatabase();
 		return db.query(TEST_TABLE,
-				new String[] { testID, testNAME, testDISC }, null, null, null,
+				new String[]{testID, testNAME, testDISC}, null, null, null,
 				null, null);
 	}
 
@@ -133,7 +132,6 @@ public class DataBase extends SQLiteOpenHelper {
 		values.put(testDISC, testdisc);
 		sqdb.insert(TEST_TABLE, testNAME, values);
 	}
-
 
 
 	public static final String QUEST_TABLE = "vopr_table";
@@ -148,6 +146,7 @@ public class DataBase extends SQLiteOpenHelper {
 	public static final String VAR4 = "var4";
 	public static final String imageURL = "imageURL";
 	public static final String questANSWER = "answer";
+	public static final String urlhit = "urlhit";
 
 	private static final String SQL_CREATE_ENTRIES1 = "CREATE TABLE "
 			+ QUEST_TABLE + " (" + questID
@@ -155,7 +154,7 @@ public class DataBase extends SQLiteOpenHelper {
 			+ questTYPE + " VARCHAR(255)," + questTEXT + " VARCHAR(255),"
 			+ VAR1 + " VARCHAR(255)," + VAR2 + " VARCHAR(255)," + VAR3
 			+ " VARCHAR(255)," + VAR4 + " VARCHAR(255)," + imageURL
-			+ " VARCHAR(255)," + questANSWER + " VARCHAR(255));";
+			+ " VARCHAR(255)," + questANSWER + " VARCHAR(255)," + urlhit + " VARCHAR(255));";
 
 	public void createQuestTable(SQLiteDatabase db) {
 		db.execSQL(SQL_CREATE_ENTRIES1);
@@ -163,15 +162,16 @@ public class DataBase extends SQLiteOpenHelper {
 
 	public Cursor getAllQuestData(String selection, String[] selectionArgs) {
 		SQLiteDatabase db = this.getWritableDatabase();
-		return db.query(QUEST_TABLE, new String[] { questID, UIDt, questTYPE,
-				questTEXT, VAR1, VAR2, VAR3, VAR4, imageURL,
-				DataBase.questANSWER }, selection, selectionArgs, null,
+		return db.query(QUEST_TABLE, new String[]{questID, UIDt, questTYPE,
+						questTEXT, VAR1, VAR2, VAR3, VAR4, imageURL,
+						DataBase.questANSWER,urlhit}, selection, selectionArgs, null,
 				null, null);
 	}
 
+
 	void insertQuestTable(String testid, String questtype, String questtext,
 			String var1, String var2, String var3, String var4, String imgurl,
-			String questanswer) {
+			String questanswer,String hiturl) {
 		SQLiteDatabase sqdb = this.getWritableDatabase();
 		ContentValues values = new ContentValues();
 		values.put(UIDt, testid);
@@ -183,6 +183,7 @@ public class DataBase extends SQLiteOpenHelper {
 		values.put(VAR4, var4);
 		values.put(imageURL, imgurl);
 		values.put(questANSWER, questanswer);
+		values.put(urlhit, hiturl);
 		sqdb.insert(QUEST_TABLE, UIDt, values);
 	}
 
