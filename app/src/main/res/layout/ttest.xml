@@ -150,7 +150,7 @@ android:text="Ответить"
                     android:layout_gravity="center_horizontal|top"
                     android:layout_row="17"
                     android:onClick="onClick1"
-                    android:text="Отправить" />
+                    android:text="Подсказка" />
 
 			<TabHost
                 android:id="@android:id/tabhost"

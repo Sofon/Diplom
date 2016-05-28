@@ -246,11 +246,47 @@ public class TTestActivity extends TabActivity {
 
 		rezbtn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
-
-				Uri webpage = Uri.parse(hit[tabnum]);
-				Intent browserIntent = new Intent(Intent.ACTION_VIEW, webpage);
-				startActivity(browserIntent);
-
+                if (!(rezbtn.getText() == "Проверить!")) {
+					Uri webpage = Uri.parse(hit[tabnum]);
+					Intent browserIntent = new Intent(Intent.ACTION_VIEW, webpage);
+					startActivity(browserIntent);
+				}
+				else {
+					jsonanswer = "{\"id_ts\":" + num + ",\"answ\":{";
+					for (int i = 1; i <= length; i++) {
+						if (i == length)
+							jsonanswer = jsonanswer + "\"" + i + "\":\""
+									+ answ[i - 1] + "\"}}";
+						else
+							jsonanswer = jsonanswer + "\"" + i + "\":\""
+									+ answ[i - 1] + "\",";
+					}
+					boolean checkCon;
+					aw = "0";
+					an.setText("0");
+					checkCon = checkInternetConnection();
+					if (checkCon) {
+						rezbtn.setEnabled(false);
+						Res_T = new ResTask();
+						Res_T.execute(Variable.id, Variable.group, jsonanswer,
+								Variable.stringresponse_oneres);
+					} else {
+						AlertDialog.Builder builder = new AlertDialog.Builder(
+								TTestActivity.this);
+						builder.setTitle("Ошибка")
+								.setMessage("Нет подключения к интернету")
+								.setCancelable(false)
+								.setNegativeButton("Попробовать позже",
+										new DialogInterface.OnClickListener() {
+											public void onClick(
+													DialogInterface dialog, int id) {
+												dialog.cancel();
+											}
+										});
+						AlertDialog alert = builder.create();
+						alert.show();
+					}
+				}
 			}
 		});
 	}
@@ -268,6 +304,7 @@ public class TTestActivity extends TabActivity {
 				r3.setVisibility(View.VISIBLE);
 				r4.setVisibility(View.VISIBLE);
 				rezbtn.setVisibility(View.VISIBLE);
+				rezbtn.setText("Подсказка");
 				qu.setText(vopr[t]);
 				r1.setText(var1[t]);
 				r2.setText(var2[t]);
@@ -284,6 +321,7 @@ public class TTestActivity extends TabActivity {
 				r3.setVisibility(View.INVISIBLE);
 				r4.setVisibility(View.INVISIBLE);
 				rezbtn.setVisibility(View.VISIBLE);
+				rezbtn.setText("Подсказка");
 				an.setText("");
 				qu.setText(vopr[t]);
 				break;
@@ -297,6 +335,7 @@ public class TTestActivity extends TabActivity {
 				r4.setVisibility(View.VISIBLE);
 				img.setVisibility(View.VISIBLE);
 				rezbtn.setVisibility(View.VISIBLE);
+				rezbtn.setText("Подсказка");
 				qu.setText(vopr[t]);
 				r1.setText(var1[t]);
 				r2.setText(var2[t]);
@@ -314,6 +353,7 @@ public class TTestActivity extends TabActivity {
 				r3.setVisibility(View.INVISIBLE);
 				r4.setVisibility(View.INVISIBLE);
 				rezbtn.setVisibility(View.VISIBLE);
+				rezbtn.setText("Подсказка");
 				an.setText("");
 				qu.setText(vopr[t]);
 				imageLoader.displayImage(put + quenm[t] + ".jpeg", img);
@@ -330,6 +370,7 @@ public class TTestActivity extends TabActivity {
 				btn.setVisibility(View.INVISIBLE);
 				qu.setVisibility(View.VISIBLE);
 				rezbtn.setVisibility(View.VISIBLE);
+				rezbtn.setText("Проверить!");
 				qu.setText("Нажмите на кнопку, чтобы завершить тест");
 				break;
 		}
@@ -389,7 +430,7 @@ public class TTestActivity extends TabActivity {
 			nameValuePairs.add(new BasicNameValuePair("gr", params[1]));
 			nameValuePairs.add(new BasicNameValuePair("res", params[2]));
 			Variable.stringresponse_oneres = POSTRequest.POST_Data(
-					nameValuePairs, Variable.URL_oneres);
+					nameValuePairs, Variable.URL_proverka);
 			return Variable.stringresponse_oneres;
 		}
 
@@ -400,7 +441,6 @@ public class TTestActivity extends TabActivity {
 			switch (qw) {
 				case "p":
 					rezbtn.setBackgroundColor(Color.GRAY);
-					sqh.delete(Integer.parseInt(num));
 					String oneres = ParseJSON.parseRes(
 							Variable.stringresponse_oneres, context);
 					qu.setText("Вы прошли тест на " + oneres + "%!");

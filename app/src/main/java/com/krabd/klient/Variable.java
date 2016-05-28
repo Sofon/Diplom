@@ -24,6 +24,7 @@ public class Variable {
 	static String URL_quest = "http://kushelev.ru/action/quest.php";
 	static String URL_statist = "http://kushelev.ru/action/st_progress.php";
 	static String URL_oneres = "http://kushelev.ru/action/answer.php";
+	static String URL_proverka = "http://kushelev.ru/action/proverka.php";
 	static String URL_reg = "http://kushelev.ru/action/reg.php";
 	static String upLoadServerUri = "http://kushelev.ru/action/imageBuffer.php";
 	static String URL_avatar = "http://kushelev.ru/action/files/avatars/";

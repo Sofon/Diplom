@@ -60,8 +60,12 @@ public class LekciiActivity extends ListActivity implements OnRefreshListener {
 		swipeLayout.setOnRefreshListener(LekciiActivity.this);
 		//swipeLayout.setColorScheme(Color.RED, Color.GREEN, Color.BLUE,
 		//		Color.CYAN);
-		this.getListView();
-		fillData();
+		boolean checkCon;
+		checkCon = checkInternetConnection();
+		if (checkCon) {
+			this.getListView();
+			fillData();
+		}
 	}
 
 	@Override

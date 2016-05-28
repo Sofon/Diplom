@@ -14,6 +14,8 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -32,9 +34,15 @@ public class MenuActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.menu);
-
+		boolean checkCon;
+		checkCon = checkInternetConnection();
+		if (!(checkCon)) {
+			Intent intent = new Intent(MenuActivity.this, OfflineActivity.class);
+			startActivity(intent);
+		}
 		//img = (ImageView) findViewById(R.id.img);
 		//ImageLoader imageLoader = ImageLoader.getInstance();
 		//imageLoader.init(ImageLoaderConfiguration
@@ -157,6 +165,12 @@ public class MenuActivity extends Activity {
 				return true;
 			default:
 				return super.onOptionsItemSelected(item);
+
 		}
+	}
+	private boolean checkInternetConnection() {
+		ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo ni = cm.getActiveNetworkInfo();
+		return ni != null;
 	}
 }
