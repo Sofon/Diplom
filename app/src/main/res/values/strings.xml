@@ -7,7 +7,7 @@
     <string name="action_about">О программе</string>
     
     <string name="hello_world">Hello world!</string>
-    
+    <string name="PDF">Подсказка!</string>
      <string name="menu_title">Главное меню</string>
      <string name="lekcii_title">Выбор лекции</string>
      <string name="test_title">Тест</string>

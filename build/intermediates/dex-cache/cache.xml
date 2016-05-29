@@ -1,3 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\exploded-aar\com.android.support\design\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="fc63b820d54c8a27a3a614bdd93920e0076581c2">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\release\com.android.support-design-22.2.0_dc711d1ad9c47696c726dc4eccbcb0f963b8c43f.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="1ee588ff2c4daf7b97c1cbf922a6c7f027285c2f">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\release\com.android.support-support-v4-22.2.0_0baf2bf40b5df74d96e51bebc1e6c9056b99910d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\libs\httpclient-4.5.2.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="733db77aa8d9b2d68015189df76ab06304406e50">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\release\httpclient-4.5.2_39aed22d3d6b936fb424c9a99402e576534266f9.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="73753982da6bde518f3a4c6b372749981d14d1a0">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\release\com.android.support-appcompat-v7-22.2.0_078d23954b3c9fa5e089745bfabe545b92dd7c91.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\libs\httpcore-4.4.4.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="b31526a230871fbe285fbcbe2813f9c0839ae9b0">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\release\httpcore-4.4.4_6d81603b053d16778e2425c88a48382a892676ed.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\libs\httpmime-4.5.2.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="22b4c53dd9b6761024258de8f9240c3dce6ea368">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\release\httpmime-4.5.2_51fbff2d198bbe044f1770dcbaa8f2f216050366.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\exploded-aar\com.android.support\support-v4\22.2.0\jars\libs\internal_impl-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="57f2ab85c164ff1676ec64dee787981c046fab79">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\release\internal_impl-22.2.0_570bdff6add3fd6e98daa51b043012378fa40089.jar" />
+    </item>
+    <item
+        jar="D:\android-sdk-windows\extras\android\m2repository\com\android\support\support-annotations\22.2.0\support-annotations-22.2.0.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="66b42a1f3eb7676070b7ef7f14b603483aecbee1">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\release\support-annotations-22.2.0_a3606c9ee4b714455c796eb1ba57490330e5eb32.jar" />
+    </item>
+    <item
+        jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\libs\universal-image-loader-1.9.3.jar"
+        jumboMode="false"
+        revision="23.0.3"
+        sha1="a85588bec3e2c4584d593d3f15df1677321bca72">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\release\universal-image-loader-1.9.3_97ee6b7eb453f6e79be20c29fc4c11c1f92825ab.jar" />
+    </item>
+
+</items>

@@ -20,9 +20,7 @@ public class OfflineActivity extends Activity {
 	private TextView ns;
 	Context context;
 	DataBase sqh = new DataBase(this);
-	//	ImageView img;
 	String name;
-	String surname;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {

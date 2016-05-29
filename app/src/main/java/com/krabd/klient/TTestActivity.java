@@ -247,9 +247,9 @@ public class TTestActivity extends TabActivity {
 		rezbtn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
                 if (!(rezbtn.getText() == "Проверить!")) {
-					Uri webpage = Uri.parse(hit[tabnum]);
-					Intent browserIntent = new Intent(Intent.ACTION_VIEW, webpage);
-					startActivity(browserIntent);
+					Intent intent = new Intent(TTestActivity.this, PDFShow.class);
+					intent.putExtra("URL",hit[tabnum]);
+					startActivity(intent);
 				}
 				else {
 					jsonanswer = "{\"id_ts\":" + num + ",\"answ\":{";
