@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
@@ -247,9 +248,29 @@ public class TTestActivity extends TabActivity {
 		rezbtn.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
                 if (!(rezbtn.getText() == "Проверить!")) {
-					Intent intent = new Intent(TTestActivity.this, PDFShow.class);
-					intent.putExtra("URL",hit[tabnum]);
-					startActivity(intent);
+					if (checkInternetConnection()) {
+						Intent intent = new Intent(TTestActivity.this, PDFShow.class);
+						intent.putExtra("URL", hit[tabnum]);
+						startActivity(intent);
+					}
+					else
+					{
+						AlertDialog.Builder builder = new AlertDialog.Builder(
+								TTestActivity.this);
+						builder.setTitle("Ошибка")
+								.setMessage("Без подключение к интернету подсказки не работают!")
+								.setCancelable(false)
+								.setNegativeButton("Попробовать позже",
+										new DialogInterface.OnClickListener() {
+											public void onClick(
+													DialogInterface dialog, int id) {
+												dialog.cancel();
+											}
+										});
+						AlertDialog alert = builder.create();
+						alert.show();
+					}
+
 				}
 				else {
 					jsonanswer = "{\"id_ts\":" + num + ",\"answ\":{";

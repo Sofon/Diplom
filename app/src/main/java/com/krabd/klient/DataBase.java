@@ -241,6 +241,50 @@ public class DataBase extends SQLiteOpenHelper {
 	}
 
 	/*--------------------------------------------------------------------------------------------------*/
+
+	public static final String Rez_TABLE = "rez";
+
+	/*
+	 * ������� ������� � ������� �������. statistID: ���������� ����� � �������;
+	 * statistQUEST: �������� �����; statistRES: ���������.
+	 */
+	public static final String Rezz = "_Rez";
+
+	/*
+	 * ������ � �������� �� �������� ������� � ������� ������.
+	 */
+	private static final String SQL_CREATE_ENTRIES5 = "CREATE TABLE  if not exists "
+			+ Rez_TABLE +" ("+  Rezz + " VARCHAR(255));";
+
+	/*
+	 * ����� ��� �������� ������� � ������� ������. ������� ������: db: ����
+	 * ������.
+	 */
+	public void createRezTable(SQLiteDatabase db) {
+		db.execSQL(SQL_CREATE_ENTRIES5);
+	}
+
+	/*
+	 * ����� ��� ��������� ���� ������� �� ������� � ������� ������. ��������
+	 * ������: Cursor: ������, ���������� ��� ������.
+	 */
+	public Cursor getAllRezData() {
+		SQLiteDatabase db = this.getWritableDatabase();
+		return db.query(Rez_TABLE,null,null,null,null,null,null);
+	}
+
+	/*
+	 * ����� ��� ���������� ������ � ������� � ������� ������. ������� ������:
+	 * statistquest: �������� �����; statistres: ���������.
+	 */
+	void insertRezTable(String Rez) {
+		SQLiteDatabase sqdb = this.getWritableDatabase();
+		ContentValues values = new ContentValues();
+		values.put(Rezz, Rez);
+		sqdb.insert(Rez_TABLE, Rezz, values);
+	}
+
+
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		// TODO Auto-generated method stub

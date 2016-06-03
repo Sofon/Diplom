@@ -45,24 +45,29 @@ public class TestsActivity extends ListActivity implements OnRefreshListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		onRefresh();
 		this.getResources().getLayout(R.layout.tests);
 		setContentView(R.layout.tests);
-		swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
-		swipeLayout.setOnRefreshListener(TestsActivity.this);
-		swipeLayout.isRefreshing();
-		swipeLayout.post(new Runnable() {
-			@Override
-			public void run() {
-				swipeLayout.setRefreshing(true);
-			}
-	});
-		//swipeLayout.setColorScheme(Color.RED, Color.GREEN, Color.BLUE, Color.CYAN);
-		this.getListView();
-		lv = getListView();
-		lv.setEnabled(false);
-		registerForContextMenu(getListView());
-		fillData();
+		if (checkInternetConnection()) {
+			onRefresh();
+
+
+			swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
+			swipeLayout.setOnRefreshListener(TestsActivity.this);
+			swipeLayout.isRefreshing();
+			swipeLayout.post(new Runnable() {
+				@Override
+				public void run() {
+					swipeLayout.setRefreshing(true);
+				}
+			});
+			//swipeLayout.setColorScheme(Color.RED, Color.GREEN, Color.BLUE, Color.CYAN);
+			this.getListView();
+			lv = getListView();
+			lv.setEnabled(false);
+			registerForContextMenu(getListView());
+		}
+			fillData();
+
 
 	}
 

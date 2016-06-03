@@ -13,6 +13,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
@@ -260,15 +261,22 @@ public class TestActivity extends TabActivity {
 					Res_T.execute(Variable.id, Variable.group, jsonanswer,
 							Variable.stringresponse_oneres);
 				} else {
+						SQLiteDatabase sqdb = sqh.getWritableDatabase();
+						sqh.createRezTable(sqdb);
+						sqh.insertRezTable(jsonanswer);
+					    sqh.delete(Integer.parseInt(num));
 					AlertDialog.Builder builder = new AlertDialog.Builder(
 							TestActivity.this);
 					builder.setTitle("Ошибка")
-							.setMessage("Нет подключения к интернету")
+							.setMessage("Нет подключения к интернету. Данные будут отправлены на сервер как только оно появится." +
+									"Результат можно будет увидеть в разделе оценки.")
 							.setCancelable(false)
 							.setNegativeButton("Попробовать позже",
 									new DialogInterface.OnClickListener() {
 										public void onClick(
 												DialogInterface dialog, int id) {
+											onBackPressed();
+
 											dialog.cancel();
 										}
 									});

@@ -1,6 +1,8 @@
 package com.krabd.klient;
 
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
@@ -16,20 +18,26 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.MultiAutoCompleteTextView;
 import android.widget.TextView;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 
 public class MenuActivity extends Activity {
 
 	private TextView ns;
 	Context context;
 	DataBase sqh = new DataBase(this);
-//	ImageView img;
+	//	ImageView img;
 	String name;
+	ResTask Res_T;
 	String surname;
 
 	@Override
@@ -39,9 +47,31 @@ public class MenuActivity extends Activity {
 		setContentView(R.layout.menu);
 		boolean checkCon;
 		checkCon = checkInternetConnection();
-		if (!(checkCon)) {
-			Intent intent = new Intent(MenuActivity.this, OfflineActivity.class);
-			startActivity(intent);
+		if (checkCon) {
+			SQLiteDatabase sqdb = sqh.getWritableDatabase();
+			sqh.createRezTable(sqdb);
+			Cursor cursoridt = sqh.getAllRezData();
+			if (cursoridt.getCount() > 0) {
+				String[]idt = new String[cursoridt.getCount()];
+				int i = 0;
+				while (cursoridt.moveToNext()) {
+					idt[i] = cursoridt.getString(0);
+					i++;
+				}
+				sqh.dropTable(sqdb, DataBase.Rez_TABLE);
+				cursoridt.close();
+				sqdb.close();
+				sqh.close();
+				String s5 = Variable.id;
+				String s6 = Variable.group;
+				for (i = 0; i < cursoridt.getCount(); i++) {
+					Res_T = new ResTask();
+
+					Res_T.execute(Variable.id, Variable.group, idt[i],
+							Variable.stringresponse_oneres);
+
+				}
+			}
 		}
 		//img = (ImageView) findViewById(R.id.img);
 		//ImageLoader imageLoader = ImageLoader.getInstance();
@@ -67,13 +97,14 @@ public class MenuActivity extends Activity {
 		cursor.close();
 
 		ns = (TextView) findViewById(R.id.about);
-		ns.setText("Добро пожаловать "+name +" "+ surname);
+		ns.setText("Добро пожаловать " + name + " " + surname);
 	}
 
 	public void onClick1(View v) {
 		Intent intent = new Intent(MenuActivity.this, LekciiActivity.class);
 		startActivity(intent);
 	}
+
 	public void onClick2(View v) {
 		Intent intent = new Intent(MenuActivity.this, TestsActivity.class);
 		startActivity(intent);
@@ -83,16 +114,19 @@ public class MenuActivity extends Activity {
 		Intent intent = new Intent(MenuActivity.this, StatistActivity.class);
 		startActivity(intent);
 	}
+
 	public void onClick4(View v) {
 		Intent intent = new Intent(MenuActivity.this, TPActivity.class);
 		startActivity(intent);
 	}
+
 	void DeleteRecursive(File fileOrDirectory) {
 		if (fileOrDirectory.isDirectory())
 			for (File child : fileOrDirectory.listFiles())
 				DeleteRecursive(child);
 		fileOrDirectory.delete();
 	}
+
 	@SuppressWarnings("deprecation")
 	@Override
 	public void onBackPressed() {
@@ -168,9 +202,24 @@ public class MenuActivity extends Activity {
 
 		}
 	}
+
 	private boolean checkInternetConnection() {
 		ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo ni = cm.getActiveNetworkInfo();
 		return ni != null;
+	}
+
+	private class ResTask extends AsyncTask<String, Integer, String> {
+		@Override
+		protected String doInBackground(String... params) {
+			// TODO Auto-generated method stub
+			List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
+			nameValuePairs.add(new BasicNameValuePair("id_st", params[0]));
+			nameValuePairs.add(new BasicNameValuePair("gr", params[1]));
+			nameValuePairs.add(new BasicNameValuePair("res", params[2]));
+			Variable.stringresponse_oneres = POSTRequest.POST_Data(
+					nameValuePairs, Variable.URL_oneres);
+			return Variable.stringresponse_oneres;
+		}
 	}
 }
