@@ -121,15 +121,16 @@ public class TPActivity extends ListActivity implements SwipeRefreshLayout.OnRef
     }
 
     private class TestTask extends AsyncTask<String, Integer, String> {
+        private String delegate=null;
         @Override
         protected String doInBackground(String... params) {
             // TODO Auto-generated method stub
             List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
             nameValuePairs.add(new BasicNameValuePair("gr", params[0]));
             nameValuePairs.add(new BasicNameValuePair("id", params[1]));
-            Variable.stringresponse_test = POSTRequest.POST_Data(
+            delegate = POSTRequest.POST_Data(
                     nameValuePairs, Variable.URL_test);
-            return Variable.stringresponse_test;
+            return delegate;
         }
 
         protected void onPostExecute(String result) {
@@ -140,7 +141,7 @@ public class TPActivity extends ListActivity implements SwipeRefreshLayout.OnRef
                 sqh.dropTable(sqdb, DataBase.QUEST_TABLE);
                 sqh.createQuestTable(sqdb);
                 Context context = TPActivity.this;
-                ParseJSON.parseTest(Variable.stringresponse_test, context);
+                ParseJSON.parseTest(delegate, context);
                 Cursor cursoridt = sqh.getAllTestData();
                 String[] idt = new String[cursoridt.getCount()];
                 int i = 0;

@@ -47,23 +47,9 @@ public class TestsActivity extends ListActivity implements OnRefreshListener {
 		super.onCreate(savedInstanceState);
 		this.getResources().getLayout(R.layout.tests);
 		setContentView(R.layout.tests);
-		if (!checkInternetConnection()) {
-			onRefresh();
-
-
+		if (checkInternetConnection()) {
 			swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
 			swipeLayout.setOnRefreshListener(TestsActivity.this);
-			swipeLayout.isRefreshing();
-			swipeLayout.post(new Runnable() {
-				@Override
-				public void run() {
-					swipeLayout.setRefreshing(true);
-				}
-			});
-			//swipeLayout.setColorScheme(Color.RED, Color.GREEN, Color.BLUE, Color.CYAN);
-			this.getListView();
-			lv = getListView();
-			lv.setEnabled(false);
 			registerForContextMenu(getListView());
 		}
 			fillData();
@@ -123,15 +109,16 @@ public class TestsActivity extends ListActivity implements OnRefreshListener {
 	}
 
 	private class TestTask extends AsyncTask<String, Integer, String> {
+		private String delegate=null;
 		@Override
 		protected String doInBackground(String... params) {
 			// TODO Auto-generated method stub
 			List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
 			nameValuePairs.add(new BasicNameValuePair("gr", params[0]));
 			nameValuePairs.add(new BasicNameValuePair("id", params[1]));
-			Variable.stringresponse_test = POSTRequest.POST_Data(
+			delegate = POSTRequest.POST_Data(
 					nameValuePairs, Variable.URL_test);
-			return Variable.stringresponse_test;
+			return delegate;
 		}
 
 		protected void onPostExecute(String result) {
@@ -142,7 +129,7 @@ public class TestsActivity extends ListActivity implements OnRefreshListener {
 				sqh.dropTable(sqdb, DataBase.QUEST_TABLE);
 				sqh.createQuestTable(sqdb);
 				Context context = TestsActivity.this;
-				ParseJSON.parseTest(Variable.stringresponse_test, context);
+				ParseJSON.parseTest(delegate, context);
 				Cursor cursoridt = sqh.getAllTestData();
 				String[] idt = new String[cursoridt.getCount()];
 				int i = 0;
