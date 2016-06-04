@@ -47,7 +47,7 @@ public class TestsActivity extends ListActivity implements OnRefreshListener {
 		super.onCreate(savedInstanceState);
 		this.getResources().getLayout(R.layout.tests);
 		setContentView(R.layout.tests);
-		if (checkInternetConnection()) {
+		if (!checkInternetConnection()) {
 			onRefresh();
 
 
@@ -156,6 +156,7 @@ public class TestsActivity extends ListActivity implements OnRefreshListener {
 				sqh.close();
 				for (i = 0; i < cursoridt.getCount(); i++) {
 					Quest_T = new QuestTask();
+					//wait(500);
 					Quest_T.execute(idt[i], Variable.stringresponse_quest);
 
 				}

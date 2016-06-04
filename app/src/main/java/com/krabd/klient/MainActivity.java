@@ -81,9 +81,9 @@ public class MainActivity extends Activity {
 			}
 			cursor.close();
 			if (lecnm[0].equals("true")) {
-				Intent intent = new Intent(MainActivity.this,
-						MenuActivity.class);
-				startActivity(intent);
+				//Intent intent = new Intent(MainActivity.this,
+				//		MenuActivity.class);
+				//startActivity(intent);
 			}
 		}
 		catch (Exception e) {
@@ -385,9 +385,7 @@ public class MainActivity extends Activity {
 				sqh.close();
 			}
 			catch (Exception e) {
-				Intent intent = new Intent(MainActivity.this,
-						MenuActivity.class);
-				startActivity(intent);
+
 				e.printStackTrace();
 			}
 		}
@@ -432,9 +430,13 @@ public class MainActivity extends Activity {
 				sqdb.close();
 				sqh.close();
 				for (i = 0; i < cursoridt.getCount(); i++) {
+
 					Quest_T = new QuestTask();
 					Quest_T.execute(idt[i], Variable.stringresponse_quest);
 				}
+				Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+				startActivity(intent);
+
 			}
 			catch (Exception e) {
 				e.printStackTrace();
@@ -447,22 +449,22 @@ public class MainActivity extends Activity {
 	}
 
 	private class QuestTask extends AsyncTask<String, Integer, String> {
-
+		public String delegate=null;
 		@Override
 		protected String doInBackground(String... params) {
 			// TODO Auto-generated method stub
 			List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
 			nameValuePairs.add(new BasicNameValuePair("id", params[0]));
-			Variable.stringresponse_quest = POSTRequest.POST_Data(
+			delegate = POSTRequest.POST_Data(
 					nameValuePairs, Variable.URL_quest);
-			return Variable.stringresponse_quest;
+			return  delegate;
 		}
 
 		protected void onPostExecute(String result) {
 			myProgress = myProgress + 10;
 			pb.setProgress(myProgress);
 			try {
-				ParseJSON.parseQuest(Variable.stringresponse_quest, context);
+				ParseJSON.parseQuest(delegate, context);
 				String selection = "imageURL <> ?";
 				String[] selectionArgs = new String[] { "none" };
 				final Cursor cursor = sqh.getAllQuestData(selection,
