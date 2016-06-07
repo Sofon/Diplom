@@ -11,59 +11,24 @@
         android:background="#151414"
         android:columnCount="11"
 
-        android:orientation="horizontal"
 	tools:context=".TestActivity">
 
 	<LinearLayout
 		android:orientation="horizontal"
 		android:layout_width="match_parent"
-		android:layout_height="wrap_content">
+		android:layout_height="match_parent">
 
 		<LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
 			android:weightSum="1"
 			android:visibility="visible">
 
-			<TabHost
-                android:id="@android:id/tabhost"
-                android:layout_width="wrap_content"
-                android:layout_column="1"
-                android:layout_columnSpan="10"
-                android:layout_row="22"
-                android:layout_height="wrap_content">
-
-                    <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <HorizontalScrollView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" >
-
-                        <TabWidget
-                            android:id="@android:id/tabs"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            >
-                        </TabWidget>
-                    </HorizontalScrollView>
-
-                    <FrameLayout
-                        android:id="@android:id/tabcontent"
-                        android:layout_width="match_parent"
-                        android:layout_height="14dp"
-                        android:layout_weight="0.35" >
-                    </FrameLayout>
-                  </LinearLayout>
-            </TabHost>
-
 			<TextView
                 android:id="@+id/quest"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="fill_parent"
+                android:layout_height="90dp"
                 android:layout_column="1"
                 android:layout_columnSpan="10"
                 android:layout_gravity="fill_horizontal|top"
@@ -133,6 +98,17 @@ android:layout_height="wrap_content"
 android:text="RadioButton" />
 </RadioGroup>
 
+			<Button
+android:id="@+id/answer"
+android:layout_width="240dp"
+android:layout_height="35dp"
+android:layout_column="1"
+android:layout_columnSpan="10"
+android:layout_row="20"
+android:onClick="onClick"
+android:text="Ответить"
+                android:layout_gravity="center_horizontal|top" />
+
 			<FrameLayout
 				android:layout_width="match_parent"
 				android:layout_height="44dp"
@@ -158,17 +134,6 @@ android:text="RadioButton" />
 			</FrameLayout>
 
 			<Button
-android:id="@+id/answer"
-android:layout_width="240dp"
-android:layout_height="35dp"
-android:layout_column="1"
-android:layout_columnSpan="10"
-android:layout_row="20"
-android:onClick="onClick"
-android:text="Ответить"
-                android:layout_gravity="center_horizontal|top" />
-
-			<Button
                     android:id="@+id/rez"
                     android:layout_width="240dp"
                     android:layout_height="35dp"
@@ -177,9 +142,49 @@ android:text="Ответить"
                     android:layout_gravity="center_horizontal|top"
                     android:layout_row="17"
                     android:onClick="onClick1"
-                    android:text="Подсказка" />
+                    android:text="Отправить" />
+
+			<TabHost
+                android:id="@android:id/tabhost"
+                android:layout_width="match_parent"
+                android:layout_column="1"
+                android:layout_columnSpan="10"
+                android:layout_row="22"
+                android:layout_height="wrap_content" >
+
+                    <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+						android:gravity="start">
+
+                    <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" >
+
+                        <TabWidget
+                            android:id="@android:id/tabs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            >
+                        </TabWidget>
+                    </HorizontalScrollView>
+
+                    <FrameLayout
+                        android:id="@android:id/tabcontent"
+                        android:layout_width="match_parent"
+                        android:layout_height="14dp"
+                        android:layout_weight="0.35" >
+                    </FrameLayout>
+                  </LinearLayout>
+            </TabHost>
 
 		</LinearLayout>
 	</LinearLayout>
+
+	<FrameLayout
+		android:layout_width="wrap_content"
+		android:layout_height="90dp"
+		android:layout_rowSpan="9" />
 
 </GridLayout>

@@ -66,7 +66,6 @@ public class TPActivity extends ListActivity implements SwipeRefreshLayout.OnRef
         lv.setEnabled(false);
         registerForContextMenu(getListView());
         fillData();
-
     }
 
 
@@ -173,21 +172,21 @@ public class TPActivity extends ListActivity implements SwipeRefreshLayout.OnRef
     }
 
     private class QuestTask extends AsyncTask<String, Integer, String> {
-
+        public String delegate=null;
         @Override
         protected String doInBackground(String... params) {
             // TODO Auto-generated method stub
             List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
             nameValuePairs.add(new BasicNameValuePair("id", params[0]));
-            Variable.stringresponse_quest = POSTRequest.POST_Data(
+            delegate = POSTRequest.POST_Data(
                     nameValuePairs, Variable.URL_quest);
-            return Variable.stringresponse_quest;
+            return delegate;
         }
 
         protected void onPostExecute(String result) {
             try {
                 Context context = TPActivity.this;
-                ParseJSON.parseQuest(Variable.stringresponse_quest, context);
+                ParseJSON.parseQuest(delegate, context);
                 String selection = "imageURL <> ?";
                 String[] selectionArgs = new String[] { "none" };
 

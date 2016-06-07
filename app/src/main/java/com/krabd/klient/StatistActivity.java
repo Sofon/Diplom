@@ -15,6 +15,7 @@ import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.widget.SwipeRefreshLayout.OnRefreshListener;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
@@ -25,6 +26,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 public class StatistActivity extends ListActivity implements OnRefreshListener {
 
 	ListView lv;
+	ResTask Res_T;
 	DataBase sqh = new DataBase(this);
 	Cursor cursor;
 	SwipeRefreshLayout swipeLayout;
@@ -39,14 +41,52 @@ public class StatistActivity extends ListActivity implements OnRefreshListener {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.statist);
+		SQLiteDatabase sqdb = sqh.getWritableDatabase();
+		sqh.createRezTable(sqdb);
+		Cursor cursoridt = sqh.getAllRezData();
+		if (cursoridt.getCount() > 0) {
+			String[] idt = new String[cursoridt.getCount()];
+			int i = 0;
+			while (cursoridt.moveToNext()) {
+				idt[i] = cursoridt.getString(0);
+				i++;
+			}
+			sqh.dropTable(sqdb, DataBase.Rez_TABLE);
+			cursoridt.close();
+			sqdb.close();
+			sqh.close();
+			String s5 = Variable.id;
+			String s6 = Variable.group;
+			for (i = 0; i < cursoridt.getCount(); i++) {
+				Res_T = new ResTask();
+
+				Res_T.execute(Variable.id, Variable.group, idt[i],
+						Variable.stringresponse_oneres);
+
+			}
+
+		}
+		super.onCreate(savedInstanceState);
+		onRefresh();
+		this.getResources().getLayout(R.layout.statist);
+		setContentView(R.layout.statist);
 		swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
 		swipeLayout.setOnRefreshListener(StatistActivity.this);
-		//swipeLayout.setColorScheme(Color.RED, Color.GREEN, Color.BLUE,
-		//		Color.CYAN);
+		swipeLayout.isRefreshing();
+		swipeLayout.post(new Runnable() {
+			@Override
+			public void run() {
+				swipeLayout.setRefreshing(true);
+			}
+		});
+		//swipeLayout.setColorScheme(Color.RED, Color.GREEN, Color.BLUE, Color.CYAN);
 		this.getListView();
-		sqdb = sqh.getWritableDatabase();
-		fillData();
+		lv = getListView();
+		lv.setEnabled(false);
 		registerForContextMenu(getListView());
+		fillData();
+
+
 	}
 
 	@Override
@@ -61,10 +101,10 @@ public class StatistActivity extends ListActivity implements OnRefreshListener {
 					Statist_T = new StatistTask();
 					Statist_T.execute(Variable.id, Variable.group,
 							Variable.stringresponse_statist);
+					swipeLayout.setRefreshing(false);
 				}
 			}, 4000);
-		}
-		else {
+		} else {
 			swipeLayout.setRefreshing(false);
 			AlertDialog.Builder builder = new AlertDialog.Builder(
 					StatistActivity.this);
@@ -90,31 +130,30 @@ public class StatistActivity extends ListActivity implements OnRefreshListener {
 	}
 
 	class StatistTask extends AsyncTask<String, Integer, String> {
-
+		public String delegate=null;
 		@Override
 		protected String doInBackground(String... params) {
 			// TODO Auto-generated method stub
 			List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(2);
 			nameValuePairs.add(new BasicNameValuePair("id", params[0]));
 			nameValuePairs.add(new BasicNameValuePair("gr", params[1]));
-			Variable.stringresponse_statist = POSTRequest.POST_Data(
+			delegate = POSTRequest.POST_Data(
 					nameValuePairs, Variable.URL_statist);
-			return Variable.stringresponse_statist;
+			return delegate;
 		}
 
 		protected void onPostExecute(String result) {
 			try {
+				SQLiteDatabase sqdb = sqh.getWritableDatabase();
 				sqh.dropTable(sqdb, DataBase.STATIST_TABLE);
 				sqh.createStatistTable(sqdb);
 				Context context = StatistActivity.this;
-				ParseJSON
-						.parseStatist(Variable.stringresponse_statist, context);
+				ParseJSON.parseStatist(delegate, context);
 				sqdb.close();
 				sqh.close();
 				fillData();
 				swipeLayout.setRefreshing(false);
-			}
-			catch (Exception e) {
+			} catch (Exception e) {
 				fillData();
 				e.printStackTrace();
 			}
@@ -124,6 +163,7 @@ public class StatistActivity extends ListActivity implements OnRefreshListener {
 
 		}
 	}
+
 	@SuppressWarnings("deprecation")
 	@Override
 	public void onBackPressed() {
@@ -139,13 +179,27 @@ public class StatistActivity extends ListActivity implements OnRefreshListener {
 		DataBase sqh = new DataBase(StatistActivity.this);
 		cursor = sqh.getAllStatistData();
 		startManagingCursor(cursor);
-		String[] from = new String[] { DataBase.statistQUEST,
-				DataBase.statistRES };
-		int[] to = new int[] { R.id.lname, R.id.ldisc };
+		String[] from = new String[]{DataBase.statistQUEST,
+				DataBase.statistRES};
+		int[] to = new int[]{R.id.lname, R.id.ldisc};
 		// Теперь создадим адаптер массива и установим его для отображения наших
 		// данных
 		notes = new SimpleCursorAdapter(this, R.layout.list_item, cursor, from,
 				to, 0);
 		setListAdapter(notes);
+	}
+
+	private class ResTask extends AsyncTask<String, Integer, String> {
+		@Override
+		protected String doInBackground(String... params) {
+			// TODO Auto-generated method stub
+			List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
+			nameValuePairs.add(new BasicNameValuePair("id_st", params[0]));
+			nameValuePairs.add(new BasicNameValuePair("gr", params[1]));
+			nameValuePairs.add(new BasicNameValuePair("res", params[2]));
+			Variable.stringresponse_oneres = POSTRequest.POST_Data(
+					nameValuePairs, Variable.URL_oneres);
+			return Variable.stringresponse_oneres;
+		}
 	}
 }

@@ -105,7 +105,9 @@ public class MainActivity extends Activity {
 		myProgress++;
 		pb.setProgress(myProgress);
 		Variable.lgnm = logi.getText().toString();
-		Variable.group = gro.getText().toString();
+		String s = gro.getText().toString();
+		s = s.replaceAll("[^0-9]+","");
+		Variable.group = s.replaceFirst ("^0*", "");
 		Variable.pssw = pas.getText().toString();
 		if (Variable.lgnm.equals("") || Variable.pssw.equals("")
 				|| Variable.group.equals("")) {

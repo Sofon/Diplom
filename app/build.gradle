@@ -9,7 +9,7 @@ android {
             storePassword 'Sofon96321478'
         }
     }
-    compileSdkVersion 22
+    compileSdkVersion 23
     buildToolsVersion "23.0.3"
     defaultConfig {
         applicationId "com.krabd.klient"
@@ -68,8 +68,8 @@ tasks.whenTaskAdded { task ->
 }
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:22.2.0'
-    compile 'com.android.support:design:22.2.0'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:design:23.4.0'
     compile files('libs/httpclient-4.5.2.jar')
     compile files('libs/httpcore-4.4.4.jar')
     compile files('libs/httpmime-4.5.2.jar')
