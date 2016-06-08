@@ -32,7 +32,7 @@ public class Variable {
 	/*
 	 * Ответы сервера в формате JSON. stringresponse_stud: Ответ сервера, на
 	 * запрос данных о студенте; stringresponse_lect: Ответ сервера, на запрос
-	 * данных о лекциях; stringresponse_test: Ответ сервера, на запрос данных о
+	 * данных о лекциях; stringresponse_test: Ответ сервера, на запрос данных они
 	 * тестах; stringresponse_quest: Ответ сервера, на запрос данных о вопросах
 	 * к тестам; stringresponse_statist: Ответ сервера, на запрос данных об
 	 * оценках студента; stringresponse_oneres: Ответ сервера, на запрос данных

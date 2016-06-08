@@ -54,8 +54,7 @@
                     <FrameLayout
                         android:id="@android:id/tabcontent"
                         android:layout_width="match_parent"
-                        android:layout_height="14dp"
-                        android:layout_weight="0.35" >
+                        android:layout_height="wrap_content">
                     </FrameLayout>
                   </LinearLayout>
             </TabHost>
