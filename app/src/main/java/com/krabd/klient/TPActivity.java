@@ -40,33 +40,23 @@ public class TPActivity extends ListActivity implements SwipeRefreshLayout.OnRef
     Cursor cursor;
 
     @Override
-    protected void onResume() {
-        super.onResume();
+    protected void onStart(){
+        super.onStart();
+        this.getResources().getLayout(R.layout.tests);
+        setContentView(R.layout.tests);
+        if (checkInternetConnection()) {
+            swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
+            swipeLayout.setOnRefreshListener(TPActivity.this);
+            registerForContextMenu(getListView());
+        }
         fillData();
     }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        onRefresh();
-        this.getResources().getLayout(R.layout.train);
-        setContentView(R.layout.train);
-        swipeLayout = (SwipeRefreshLayout) findViewById(R.id.swipe_container);
-        swipeLayout.setOnRefreshListener(TPActivity.this);
-        swipeLayout.isRefreshing();
-        swipeLayout.post(new Runnable() {
-            @Override
-            public void run() {
-                swipeLayout.setRefreshing(true);
-            }
-        });
-        //swipeLayout.setColorScheme(Color.RED, Color.GREEN, Color.BLUE, Color.CYAN);
-        this.getListView();
-        lv = getListView();
-        lv.setEnabled(false);
-        registerForContextMenu(getListView());
-        fillData();
+
     }
+
 
 
 

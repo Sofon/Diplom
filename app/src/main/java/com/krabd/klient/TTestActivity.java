@@ -58,7 +58,6 @@ public class TTestActivity extends TabActivity {
 	private RadioButton r1, r2, r3, r4;
 	private RadioGroup rad, rad2;
 	ImageView img;
-	Bitmap bitmap;
 	static ImageLoader imageLoader;
 	static String put;
 	ResTask Res_T;
@@ -93,7 +92,7 @@ public class TTestActivity extends TabActivity {
 		r4 = (RadioButton) findViewById(R.id.radioButton4);
 		btn = (Button) findViewById(R.id.answer);
 		rezbtn = (Button) findViewById(R.id.rez);
-		for (int o = 0; o < 10; o++) {
+		for (int o = 0; o < 25; o++) {
 			clo[o] = 0;
 		}
 		num = getIntent().getStringExtra("num");

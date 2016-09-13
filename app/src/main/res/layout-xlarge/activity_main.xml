@@ -52,7 +52,8 @@
                     android:id="@+id/log"
                     android:layout_gravity="center_horizontal"
                     android:singleLine="true"
-                    android:maxLength="16" />
+                    android:maxLength="16"
+                    android:text="TGoCloud" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -70,7 +71,8 @@
                     android:id="@+id/pass"
                     android:layout_gravity="center_horizontal"
                     android:singleLine="true"
-                    android:maxLength="20" />
+                    android:maxLength="20"
+                    android:text="TGoCloud" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -85,7 +87,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/group"
                     android:layout_gravity="center_horizontal"
-                    android:text="A-07-13"
+                    android:text="A-07-12"
                     android:singleLine="true" />
 
                 <Button

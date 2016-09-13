@@ -36,15 +36,16 @@ public class TestsActivity extends ListActivity implements OnRefreshListener {
 	DataBase sqh = new DataBase(this);
 	Cursor cursor;
 
-	@Override
-	protected void onResume() {
-		super.onResume();
-		fillData();
-	}
+//	@Override
+//	protected void onResume() {
+//		super.onResume();
+//		fillData();
+//	}
+
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+	protected void onStart(){
+		super.onStart();
 		this.getResources().getLayout(R.layout.tests);
 		setContentView(R.layout.tests);
 		if (checkInternetConnection()) {
@@ -52,8 +53,11 @@ public class TestsActivity extends ListActivity implements OnRefreshListener {
 			swipeLayout.setOnRefreshListener(TestsActivity.this);
 			registerForContextMenu(getListView());
 		}
-			fillData();
-
+		fillData();
+	}
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
 
 	}
 
@@ -162,15 +166,15 @@ public class TestsActivity extends ListActivity implements OnRefreshListener {
 	}
 
 	private class QuestTask extends AsyncTask<String, Integer, String> {
-
+		private String delegate=null;
 		@Override
 		protected String doInBackground(String... params) {
 			// TODO Auto-generated method stub
 			List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
 			nameValuePairs.add(new BasicNameValuePair("id", params[0]));
-			Variable.stringresponse_quest = POSTRequest.POST_Data(
+			delegate = POSTRequest.POST_Data(
 					nameValuePairs, Variable.URL_quest);
-			return Variable.stringresponse_quest;
+			return delegate;
 		}
 
 		protected void onPostExecute(String result) {
