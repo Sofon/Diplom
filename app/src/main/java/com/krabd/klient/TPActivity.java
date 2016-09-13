@@ -40,8 +40,8 @@ public class TPActivity extends ListActivity implements SwipeRefreshLayout.OnRef
     Cursor cursor;
 
     @Override
-    protected void onStart(){
-        super.onStart();
+    protected void onResume(){
+        super.onResume();
         this.getResources().getLayout(R.layout.tests);
         setContentView(R.layout.tests);
         if (checkInternetConnection()) {

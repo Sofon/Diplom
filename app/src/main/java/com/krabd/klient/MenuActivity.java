@@ -97,7 +97,7 @@ public class MenuActivity extends Activity {
 		cursor.close();
 
 		ns = (TextView) findViewById(R.id.about);
-		ns.setText("Добро пожаловать " + name + " " + surname);
+		ns.setText("Добро пожаловать, " + name + " " + surname +" "+ BuildConfig.VERSION_CODE);
 	}
 
 	public void onClick1(View v) {

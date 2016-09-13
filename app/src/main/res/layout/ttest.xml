@@ -52,7 +52,7 @@
                                 android:id="@android:id/tabs"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                >
+                                style="@android:style/Widget.Holo.TabWidget">
                             </TabWidget>
                         </HorizontalScrollView>
 
@@ -103,13 +103,13 @@
 
     <RadioButton
     android:id="@+id/radioButton3"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="RadioButton" />
 
     <RadioButton
     android:id="@+id/radioButton4"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="RadioButton" />
     </RadioGroup>
@@ -125,14 +125,14 @@
 
     <RadioButton
     android:id="@+id/radioButton1"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
 
     android:text="RadioButton" />
 
     <RadioButton
     android:id="@+id/radioButton2"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="RadioButton" />
     </RadioGroup>

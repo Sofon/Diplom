@@ -44,8 +44,8 @@ public class TestsActivity extends ListActivity implements OnRefreshListener {
 
 
 	@Override
-	protected void onStart(){
-		super.onStart();
+	protected void onResume(){
+		super.onResume();
 		this.getResources().getLayout(R.layout.tests);
 		setContentView(R.layout.tests);
 		if (checkInternetConnection()) {

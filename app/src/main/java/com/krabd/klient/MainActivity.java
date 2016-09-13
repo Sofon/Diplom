@@ -81,9 +81,9 @@ public class MainActivity extends Activity {
 			}
 			cursor.close();
 			if (lecnm[0].equals("true")) {
-				//Intent intent = new Intent(MainActivity.this,
-				//		MenuActivity.class);
-				//startActivity(intent);
+				Intent intent = new Intent(MainActivity.this,
+						MenuActivity.class);
+				startActivity(intent);
 			}
 		}
 		catch (Exception e) {
