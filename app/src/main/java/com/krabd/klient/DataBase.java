@@ -147,6 +147,7 @@ public class DataBase extends SQLiteOpenHelper {
 	public static final String imageURL = "imageURL";
 	public static final String questANSWER = "answer";
 	public static final String urlhit = "urlhit";
+	public static final String quid = "quid";
 
 	private static final String SQL_CREATE_ENTRIES1 = "CREATE TABLE "
 			+ QUEST_TABLE + " (" + questID
@@ -154,7 +155,7 @@ public class DataBase extends SQLiteOpenHelper {
 			+ questTYPE + " VARCHAR(255)," + questTEXT + " VARCHAR(255),"
 			+ VAR1 + " VARCHAR(255)," + VAR2 + " VARCHAR(255)," + VAR3
 			+ " VARCHAR(255)," + VAR4 + " VARCHAR(255)," + imageURL
-			+ " VARCHAR(255)," + questANSWER + " VARCHAR(255)," + urlhit + " VARCHAR(255));";
+			+ " VARCHAR(255)," + questANSWER + " VARCHAR(255)," + urlhit + " VARCHAR(255),"+ quid +" VARCHAR(255));";
 
 	public void createQuestTable(SQLiteDatabase db) {
 		db.execSQL(SQL_CREATE_ENTRIES1);
@@ -164,14 +165,14 @@ public class DataBase extends SQLiteOpenHelper {
 		SQLiteDatabase db = this.getWritableDatabase();
 		return db.query(QUEST_TABLE, new String[]{questID, UIDt, questTYPE,
 						questTEXT, VAR1, VAR2, VAR3, VAR4, imageURL,
-						DataBase.questANSWER,urlhit}, selection, selectionArgs, null,
+						DataBase.questANSWER,urlhit,quid}, selection, selectionArgs, null,
 				null, null);
 	}
 
 
 	void insertQuestTable(String testid, String questtype, String questtext,
 			String var1, String var2, String var3, String var4, String imgurl,
-			String questanswer,String hiturl) {
+			String questanswer,String hiturl,String quids) {
 		SQLiteDatabase sqdb = this.getWritableDatabase();
 		ContentValues values = new ContentValues();
 		values.put(UIDt, testid);
@@ -184,6 +185,7 @@ public class DataBase extends SQLiteOpenHelper {
 		values.put(imageURL, imgurl);
 		values.put(questANSWER, questanswer);
 		values.put(urlhit, hiturl);
+		values.put(quid, quids);
 		sqdb.insert(QUEST_TABLE, UIDt, values);
 	}
 
@@ -284,6 +286,37 @@ public class DataBase extends SQLiteOpenHelper {
 		sqdb.insert(Rez_TABLE, Rezz, values);
 	}
 
+	public static final String Time_TABLE = "time_table";
+
+	public static final String awsID = "_id";
+	public static final String qustid = "qust";
+	public static final String idtest1 = "test";
+	public static final String iduser = "user";
+
+	private static final String SQL_CREATE_ENTRIES8 = "CREATE TABLE "
+			+ Time_TABLE + " (" + awsID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+			+ qustid + " int(255)," + idtest1 + " int(255)," + iduser
+			+ " int(255));";
+
+	public void createTimetab(SQLiteDatabase db) {
+		db.execSQL(SQL_CREATE_ENTRIES8);
+	}
+
+	public Cursor getAllTimedate() {
+		SQLiteDatabase db = this.getWritableDatabase();
+		return db.query(Time_TABLE, new String[]{awsID, qustid, idtest1,
+				iduser}, null, null, null, null, null);
+
+	}
+
+	void insertTimeDate(int questID, int idtest, int iduser1) {
+		SQLiteDatabase sqdb = this.getWritableDatabase();
+		ContentValues values = new ContentValues();
+		values.put(qustid, questID);
+		values.put(idtest1, idtest);
+		values.put(iduser, iduser1);
+		sqdb.insert(LEC_TABLE,awsID, values);
+	}
 
 	@Override
 	public void onCreate(SQLiteDatabase db) {

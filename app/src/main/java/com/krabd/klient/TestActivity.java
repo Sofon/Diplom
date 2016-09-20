@@ -261,10 +261,10 @@ public class TestActivity extends TabActivity {
 					Res_T.execute(Variable.id, Variable.group, jsonanswer,
 							Variable.stringresponse_oneres);
 				} else {
-						SQLiteDatabase sqdb = sqh.getWritableDatabase();
-						sqh.createRezTable(sqdb);
-						sqh.insertRezTable(jsonanswer);
-					    sqh.delete(Integer.parseInt(num));
+					SQLiteDatabase sqdb = sqh.getWritableDatabase();
+					sqh.createRezTable(sqdb);
+					sqh.insertRezTable(jsonanswer);
+					sqh.delete(Integer.parseInt(num));
 					AlertDialog.Builder builder = new AlertDialog.Builder(
 							TestActivity.this);
 					builder.setTitle("Ошибка")
