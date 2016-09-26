@@ -1,6 +1,7 @@
 package com.krabd.klient;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.http.NameValuePair;
@@ -20,6 +21,7 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.inputmethod.InputMethodManager;
@@ -34,10 +36,13 @@ import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TextView;
 import android.app.TabActivity;
 
+import static com.krabd.klient.R.id.time;
+
 @SuppressWarnings("deprecation")
 public class TestActivity extends TabActivity {
 
 	DataBase sqh = new DataBase(this);
+	public long time;
 	protected static int[] clo = new int[100];
 	protected static String[] type;
 	protected static String[] vopr;
@@ -47,6 +52,8 @@ public class TestActivity extends TabActivity {
 	protected static String[] var4;
 	protected static String[] quenm;
 	protected static String[] hit;
+	protected static String[] quidt;
+	protected static long[] times;
 	private EditText an;
 	private TextView qu;
 	int y;
@@ -77,6 +84,7 @@ public class TestActivity extends TabActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
 		setContentView(R.layout.test);
 		img = (ImageView) findViewById(R.id.img);
 		qu = (TextView) findViewById(R.id.quest);
@@ -92,6 +100,11 @@ public class TestActivity extends TabActivity {
 		for (int o = 0; o < 25; o++) {
 			clo[o] = 0;
 		}
+		if(time==0)
+		 	time = new Date().getTime();
+		else {
+			time -= new Date().getTime();
+		}
 		num = getIntent().getStringExtra("num");
 		String selection = "_idt = ?";
 		String[] selectionArgs = new String[] { num };
@@ -106,6 +119,8 @@ public class TestActivity extends TabActivity {
 		type = new String[length];
 		quenm = new String[length];
 		hit = new String[length];
+		quidt = new String[length];
+		times = new long[length];
 		int i = 0;
 		while (curstext.moveToNext()) {
 			// GET COLUMN INDICES + VALUES OF THOSE COLUMNS
@@ -133,6 +148,10 @@ public class TestActivity extends TabActivity {
 			String name7 = curstext.getString(curstext
 					.getColumnIndex(DataBase.questID));
 			hit[i] = name7;
+			String name8 = curstext.getString(curstext
+					.getColumnIndex(DataBase.quid));
+			quidt[i] = name8;
+			times[i] = 0;
 			i++;
 		}
 		curstext.close();
@@ -151,6 +170,13 @@ public class TestActivity extends TabActivity {
 		typequest = type[0];
 		typeint = Integer.parseInt(typequest);
 		tabnum = 0;
+		if(time==0)
+			time = new Date().getTime();
+		else {
+			time -= new Date().getTime();
+			times[tabHost.getCurrentTab()] = times[tabHost.getCurrentTab()] + (-time/1000);
+			time = new Date().getTime();
+		}
 		swtype(typeint, 0, vopr, var1, var2, var3, var4, imageLoader);
 		rad.setOnCheckedChangeListener(listener1);
 		rad2.setOnCheckedChangeListener(listener2);
@@ -170,6 +196,14 @@ public class TestActivity extends TabActivity {
 						btn.setEnabled(false);
 					} else {
 						btn.setEnabled(true);
+						if(time==0)
+							time = new Date().getTime();
+						else {
+							time -= new Date().getTime();
+							times[tabHost.getCurrentTab()] = times[tabHost.getCurrentTab()] + (-time/1000);
+							time = new Date().getTime();
+						}
+
 					}
 					swtype(typeint, tabnum, vopr, var1, var2, var3, var4,
 							imageLoader);
@@ -186,6 +220,13 @@ public class TestActivity extends TabActivity {
 						btn.setEnabled(false);
 					} else {
 						btn.setEnabled(true);
+						if(time==0)
+							time = new Date().getTime();
+						else {
+							time -= new Date().getTime();
+							times[tabHost.getCurrentTab()] = times[tabHost.getCurrentTab()] + (-time/1000);
+							time = new Date().getTime();
+						}
 					}
 
 					hideSoftKeyboard();
@@ -260,6 +301,15 @@ public class TestActivity extends TabActivity {
 					Res_T = new ResTask();
 					Res_T.execute(Variable.id, Variable.group, jsonanswer,
 							Variable.stringresponse_oneres);
+					String jsonanswer1 = "{\"id_ts\":" + num + ",\"answ\":{";
+					for (int i = 1; i <= length; i++) {
+						if (i == length)
+							jsonanswer1 = jsonanswer1 + "\"" + i + "\":\""
+									+times[i - 1] + "\"}}";
+						else
+							jsonanswer1 = jsonanswer1 + "\"" + i + "\":\""
+									+times[i - 1] + "\",";
+					}
 				} else {
 					SQLiteDatabase sqdb = sqh.getWritableDatabase();
 					sqh.createRezTable(sqdb);
