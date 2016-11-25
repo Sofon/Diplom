@@ -11,6 +11,15 @@
         <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\transforms\dex\debug\folders\1000\2\httpmime-4.5.2_51fbff2d198bbe044f1770dcbaa8f2f216050366\classes.dex" />
     </item>
     <item
+        is-multidex="false"
+        jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\libs\httpmime-4.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="22b4c53dd9b6761024258de8f9240c3dce6ea368">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\debug\httpmime-4.5.2_51fbff2d198bbe044f1770dcbaa8f2f216050366.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="D:\SDK\extras\android\m2repository\com\android\support\support-annotations\24.0.0\support-annotations-24.0.0.jar"
         jumboMode="true"
@@ -29,13 +38,40 @@
         <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\transforms\dex\debug\folders\1000\2\httpcore-4.4.4_6d81603b053d16778e2425c88a48382a892676ed\classes.dex" />
     </item>
     <item
+        is-multidex="false"
+        jar="D:\SDK\extras\android\m2repository\com\android\support\support-annotations\24.0.0\support-annotations-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\debug\support-annotations-24.0.0_29eb4f51f5dcb2aca43ec16f8b1ab6ad207a5502.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\libs\httpcore-4.4.4.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="b31526a230871fbe285fbcbe2813f9c0839ae9b0">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\debug\httpcore-4.4.4_6d81603b053d16778e2425c88a48382a892676ed.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="c7f63b032df14b967d38e7fae23f1ec8666728d9">
+        sha1="59fb798a3606003b60ada32da7f938cb34445142">
         <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_7241e86dcda88c68114274806904ffde48482f73\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-24.0.0_9098360621bbbc4ac6a04647c88a3e464daad0ec.jar" />
     </item>
     <item
         is-multidex="true"
@@ -45,6 +81,24 @@
         revision="23.0.3"
         sha1="894922f67adeaaef51f077a29e315da21a3382d3">
         <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.0.0_6f5f080109642018f58bee3510d3923bf435dc6c\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="894922f67adeaaef51f077a29e315da21a3382d3">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-24.0.0_6f5f080109642018f58bee3510d3923bf435dc6c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-24.0.0_f293f9517f97588095da343989ca71a44944d73b.jar" />
     </item>
     <item
         is-multidex="true"
@@ -63,6 +117,24 @@
         revision="23.0.3"
         sha1="733db77aa8d9b2d68015189df76ab06304406e50">
         <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\transforms\dex\debug\folders\1000\2\httpclient-4.5.2_39aed22d3d6b936fb424c9a99402e576534266f9\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\libs\httpclient-4.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="733db77aa8d9b2d68015189df76ab06304406e50">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\debug\httpclient-4.5.2_39aed22d3d6b936fb424c9a99402e576534266f9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="0874286cc2fd88d54fdf130e9d5372730da6de97">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-24.0.0_db8b028202af9eab640ef7211f864315dd854cc9.jar" />
     </item>
     <item
         is-multidex="true"
@@ -88,8 +160,17 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="d4170442402f85dd7430960b3b7133626b944a5c">
+        sha1="e18a54acd112a2b3b546271276d00f7d5020c615">
         <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_b4d07b1fe556264d1a359e1f7bdbd85ecbe32ad6\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\libs\universal-image-loader-1.9.3.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a85588bec3e2c4584d593d3f15df1677321bca72">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\debug\universal-image-loader-1.9.3_97ee6b7eb453f6e79be20c29fc4c11c1f92825ab.jar" />
     </item>
     <item
         is-multidex="true"
@@ -119,6 +200,15 @@
         <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.0.0_f0b860d24761ab9ea4c92db5120c8453fd7f4643\classes.dex" />
     </item>
     <item
+        is-multidex="false"
+        jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\exploded-aar\com.android.support\design\24.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="fc29308a7a8f6d4407b34634eb48fb8b817f9b23">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\debug\com.android.support-design-24.0.0_f0b860d24761ab9ea4c92db5120c8453fd7f4643.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\libs\internal_impl-24.0.0.jar"
         jumboMode="true"
@@ -126,6 +216,24 @@
         revision="23.0.3"
         sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
         <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.0.0_61fd6df88a8983af2a254b74c69645b857254a65\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.0.0\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-24.0.0_f1d6f5db14f5233001e2a28a1602eb3d3d0bf822.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\libs\internal_impl-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.3"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="C:\Users\Sofon\AndroidStudioProjects\Client6\app\build\intermediates\pre-dexed\debug\internal_impl-24.0.0_61fd6df88a8983af2a254b74c69645b857254a65.jar" />
     </item>
 
 </items>

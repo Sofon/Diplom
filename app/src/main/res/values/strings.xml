@@ -4,7 +4,7 @@
     <string name="app_name">StudCity</string>
     <string name="action_ras">Лаба</string>
     <string name="action_settings">Настройки</string>
-    <string name="action_about">О программе</string>
+    <string name="action_about">Пользовательское соглашение</string>
     
     <string name="hello_world">Hello world!</string>
     <string name="PDF">Подсказка!</string>

@@ -66,6 +66,7 @@ public class TestActivity extends TabActivity {
 	static String put;
 	ResTask Res_T;
 	static String jsonanswer;
+	static String jsonanswer2;
 	static String[] answ = new String[100];
 	String num;
 	String typequest;
@@ -287,11 +288,22 @@ public class TestActivity extends TabActivity {
 				for (int i = 1; i <= length; i++) {
 					if (i == length)
 						jsonanswer = jsonanswer + "\"" + i + "\":\""
-								+ answ[i - 1] + "\"}}";
+								+ answ[i - 1] + "\"}";
 					else
 						jsonanswer = jsonanswer + "\"" + i + "\":\""
 								+ answ[i - 1] + "\",";
 				}
+				jsonanswer = jsonanswer + ",\"time\":{";
+				for (int i = 1; i <= length; i++) {
+					if (i == length)
+						jsonanswer = jsonanswer + "\"" + i + "\":\""
+								+ times[i - 1] + "\"}}";
+					else
+						jsonanswer = jsonanswer + "\"" + i + "\":\""
+								+ times[i - 1] + "\",";
+				}
+				jsonanswer2 = jsonanswer;
+
 				boolean checkCon;
 				aw = "0";
 				an.setText("0");
@@ -299,21 +311,13 @@ public class TestActivity extends TabActivity {
 				if (checkCon) {
 					rezbtn.setEnabled(false);
 					Res_T = new ResTask();
-					Res_T.execute(Variable.id, Variable.group, jsonanswer,
+					Res_T.execute(Variable.id, Variable.group, jsonanswer,jsonanswer2,
 							Variable.stringresponse_oneres);
-					String jsonanswer1 = "{\"id_ts\":" + num + ",\"answ\":{";
-					for (int i = 1; i <= length; i++) {
-						if (i == length)
-							jsonanswer1 = jsonanswer1 + "\"" + i + "\":\""
-									+times[i - 1] + "\"}}";
-						else
-							jsonanswer1 = jsonanswer1 + "\"" + i + "\":\""
-									+times[i - 1] + "\",";
-					}
 				} else {
 					SQLiteDatabase sqdb = sqh.getWritableDatabase();
 					sqh.createRezTable(sqdb);
 					sqh.insertRezTable(jsonanswer);
+					sqh.insertRezTable(jsonanswer2);
 					sqh.delete(Integer.parseInt(num));
 					AlertDialog.Builder builder = new AlertDialog.Builder(
 							TestActivity.this);
@@ -466,10 +470,11 @@ public class TestActivity extends TabActivity {
 		@Override
 		protected String doInBackground(String... params) {
 			// TODO Auto-generated method stub
-			List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
+			List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>();
 			nameValuePairs.add(new BasicNameValuePair("id_st", params[0]));
 			nameValuePairs.add(new BasicNameValuePair("gr", params[1]));
 			nameValuePairs.add(new BasicNameValuePair("res", params[2]));
+			nameValuePairs.add(new BasicNameValuePair("time", params[3]));
 			Variable.stringresponse_oneres = POSTRequest.POST_Data(
 					nameValuePairs, Variable.URL_oneres);
 			return Variable.stringresponse_oneres;
@@ -507,6 +512,27 @@ public class TestActivity extends TabActivity {
 									});
 					AlertDialog alert2 = builder2.create();
 					alert2.show();
+					break;
+				case "S":
+					rezbtn.setBackgroundColor(Color.GRAY);
+					AlertDialog.Builder builder6 = new AlertDialog.Builder(
+							TestActivity.this);
+					builder6.setTitle("Ошибка!!!")
+							.setMessage("Sofon!")
+							.setPositiveButton("ОК",
+									new DialogInterface.OnClickListener() {
+										public void onClick(DialogInterface dialog,
+															int id) {
+											Intent intent = new Intent(
+													TestActivity.this,
+													TestsActivity.class);
+											startActivity(intent);
+
+											dialog.cancel();
+										}
+									});
+					AlertDialog alert6 = builder6.create();
+					alert6.show();
 					break;
 				default:
 					rezbtn.setEnabled(true);

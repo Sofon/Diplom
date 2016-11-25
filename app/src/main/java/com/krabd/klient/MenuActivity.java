@@ -52,10 +52,19 @@ public class MenuActivity extends Activity {
 			sqh.createRezTable(sqdb);
 			Cursor cursoridt = sqh.getAllRezData();
 			if (cursoridt.getCount() > 0) {
-				String[]idt = new String[cursoridt.getCount()];
+				String[]idt = new String[cursoridt.getCount()/2];
+				String[]idt2 = new String[cursoridt.getCount()/2];
 				int i = 0;
+				int j = 0;
+				int k = 0;
 				while (cursoridt.moveToNext()) {
-					idt[i] = cursoridt.getString(0);
+					if(i % 2 == 0) {
+						idt2[j] = cursoridt.getString(0);
+						j++;
+					} else {
+						idt[k] = cursoridt.getString(0);
+						k++;
+					}
 					i++;
 				}
 				sqh.dropTable(sqdb, DataBase.Rez_TABLE);
@@ -67,7 +76,7 @@ public class MenuActivity extends Activity {
 				for (i = 0; i < cursoridt.getCount(); i++) {
 					Res_T = new ResTask();
 
-					Res_T.execute(Variable.id, Variable.group, idt[i],
+					Res_T.execute(Variable.id, Variable.group, idt[i/2],idt2[i/2],
 							Variable.stringresponse_oneres);
 
 				}
@@ -213,10 +222,11 @@ public class MenuActivity extends Activity {
 		@Override
 		protected String doInBackground(String... params) {
 			// TODO Auto-generated method stub
-			List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(3);
+			List<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(4);
 			nameValuePairs.add(new BasicNameValuePair("id_st", params[0]));
 			nameValuePairs.add(new BasicNameValuePair("gr", params[1]));
 			nameValuePairs.add(new BasicNameValuePair("res", params[2]));
+			nameValuePairs.add(new BasicNameValuePair("time", params[3]));
 			Variable.stringresponse_oneres = POSTRequest.POST_Data(
 					nameValuePairs, Variable.URL_oneres);
 			return Variable.stringresponse_oneres;
